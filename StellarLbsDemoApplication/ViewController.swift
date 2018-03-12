@@ -10,12 +10,29 @@ import UIKit
 import Mapbox
 import MapwizeForMapbox
 
-class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDelegate, NAOSyncDelegate, MWZMapwizePluginDelegate, MGLMapViewDelegate {
+class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDelegate, NAOSyncDelegate, MWZMapwizePluginDelegate, MGLMapViewDelegate, NAOGeofencingHandleDelegate {
     
     var mapWizePlugin:MapwizePlugin!
     var mapView = MGLMapView()
     var provider:PoleStarLocationProvider = PoleStarLocationProvider.init()
-    var locationHandle: NAOLocationHandle! = nil
+    var locationHandle:NAOLocationHandle! = nil
+    var geofenceHandle:NAOGeofencingHandle! = nil
+    
+    func didFire(_ alert: NaoAlert!) {
+        NSLog("geofence")
+        if(alert.rules.isEmpty == false){
+            NSLog("not empty")
+            //if(alert.rules.startIndex == DBTALERTRULE.ENTERGEOFENCERULE.rawValue){
+                NSLog("entergeofence")
+                if(alert.content.starts(with: "http")){
+                    NSLog("http")
+                    //start browser
+                    UIApplication.shared.open(URL.init(string: alert.content)!, options: [:], completionHandler: nil)
+                }
+            //}
+        }
+        
+    }
     
     func didSynchronizationSuccess() {
         NSLog("didSynchronizationSuccess")
@@ -60,9 +77,12 @@ class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationHandle = NAOLocationHandle.init(key: "emulator", delegate: self, sensorsDelegate: self)
+        locationHandle = NAOLocationHandle.init(key: readPropertyList(key: "NaoBrestKey"), delegate: self, sensorsDelegate: self)
         locationHandle.synchronizeData(self)
         locationHandle.start()
+        geofenceHandle = NAOGeofencingHandle.init(key: readPropertyList(key: "NaoBrestKey"), delegate: self, sensorsDelegate: self)
+        geofenceHandle.synchronizeData(self)
+        geofenceHandle.start()
         mapView = MGLMapView(frame: view.bounds)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.setCenter(CLLocationCoordinate2D(latitude: 48.44159, longitude: -4.41268), zoomLevel: 17, animated: false)
@@ -81,6 +101,12 @@ class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDel
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func readPropertyList(key: String) -> String{
+        //add properties in Info.plist
+        let result:String = Bundle.main.object(forInfoDictionaryKey: key) as! String
+        return result
     }
 
 

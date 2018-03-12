@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C70B556BFA19E926FD2CAAE /* Pods_StellarLbsDemoApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6725892C2F2BD0CA4D6C737 /* Pods_StellarLbsDemoApplication.framework */; };
 		7869181B107418FBCB09B9C3 /* Pods_StellarLbsDemoApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD84338A3E8EE2F53ED42539 /* Pods_StellarLbsDemoApplicationTests.framework */; };
+		841134FD2056C523007A23F3 /* alerts_emulator.json in Resources */ = {isa = PBXBuildFile; fileRef = 841134FC2056C523007A23F3 /* alerts_emulator.json */; };
 		84C5CE5C2046A969005DD7D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE5B2046A969005DD7D0 /* AppDelegate.swift */; };
 		84C5CE5E2046A969005DD7D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE5D2046A969005DD7D0 /* ViewController.swift */; };
 		84C5CE612046A969005DD7D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5CE5F2046A969005DD7D0 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		6853248001F03AAFAB690CA1 /* Pods-StellarLbsDemoApplicationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationUITests/Pods-StellarLbsDemoApplicationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75B4204A0B218C410D5BD0AF /* Pods-StellarLbsDemoApplicationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationUITests/Pods-StellarLbsDemoApplicationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FC9E6DBE44491615D7ACD5A /* Pods-StellarLbsDemoApplicationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationTests/Pods-StellarLbsDemoApplicationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		841134FC2056C523007A23F3 /* alerts_emulator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = alerts_emulator.json; sourceTree = "<group>"; };
 		84C5CE582046A969005DD7D0 /* StellarLbsDemoApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StellarLbsDemoApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C5CE5B2046A969005DD7D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C5CE5D2046A969005DD7D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		84C5CE5A2046A969005DD7D0 /* StellarLbsDemoApplication */ = {
 			isa = PBXGroup;
 			children = (
+				841134FC2056C523007A23F3 /* alerts_emulator.json */,
 				84D2EDC320517F5B0039F15B /* nao.kml */,
 				84C5CE5B2046A969005DD7D0 /* AppDelegate.swift */,
 				84C5CE5D2046A969005DD7D0 /* ViewController.swift */,
@@ -293,6 +296,7 @@
 				84C5CE662046A969005DD7D0 /* LaunchScreen.storyboard in Resources */,
 				84C5CE632046A969005DD7D0 /* Assets.xcassets in Resources */,
 				84C5CE612046A969005DD7D0 /* Main.storyboard in Resources */,
+				841134FD2056C523007A23F3 /* alerts_emulator.json in Resources */,
 				84D2EDC420517F5B0039F15B /* nao.kml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

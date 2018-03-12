@@ -10,4 +10,5 @@
 #import "NAOSensorsDelegate.h"
 #import "DBNAOERRORCODE.h"
 #import "DBTNAOFIXSTATUS.h"
+#import "DBTALERTRULE.h"
 
