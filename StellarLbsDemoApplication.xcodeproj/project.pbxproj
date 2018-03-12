@@ -1,0 +1,788 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C70B556BFA19E926FD2CAAE /* Pods_StellarLbsDemoApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6725892C2F2BD0CA4D6C737 /* Pods_StellarLbsDemoApplication.framework */; };
+		7869181B107418FBCB09B9C3 /* Pods_StellarLbsDemoApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD84338A3E8EE2F53ED42539 /* Pods_StellarLbsDemoApplicationTests.framework */; };
+		84C5CE5C2046A969005DD7D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE5B2046A969005DD7D0 /* AppDelegate.swift */; };
+		84C5CE5E2046A969005DD7D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE5D2046A969005DD7D0 /* ViewController.swift */; };
+		84C5CE612046A969005DD7D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5CE5F2046A969005DD7D0 /* Main.storyboard */; };
+		84C5CE632046A969005DD7D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C5CE622046A969005DD7D0 /* Assets.xcassets */; };
+		84C5CE662046A969005DD7D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5CE642046A969005DD7D0 /* LaunchScreen.storyboard */; };
+		84C5CE712046A969005DD7D0 /* StellarLbsDemoApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE702046A969005DD7D0 /* StellarLbsDemoApplicationTests.swift */; };
+		84C5CE7C2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE7B2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift */; };
+		84D2EDC2205172970039F15B /* PoleStarLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2EDC1205172970039F15B /* PoleStarLocationProvider.swift */; };
+		84D2EDC420517F5B0039F15B /* nao.kml in Resources */ = {isa = PBXBuildFile; fileRef = 84D2EDC320517F5B0039F15B /* nao.kml */; };
+		EA338BA84250851902292530 /* Pods_StellarLbsDemoApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B9DACAEA68958DA52AD658 /* Pods_StellarLbsDemoApplicationUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84C5CE6D2046A969005DD7D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84C5CE502046A969005DD7D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84C5CE572046A969005DD7D0;
+			remoteInfo = StellarLbsDemoApplication;
+		};
+		84C5CE782046A969005DD7D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84C5CE502046A969005DD7D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84C5CE572046A969005DD7D0;
+			remoteInfo = StellarLbsDemoApplication;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07B9DACAEA68958DA52AD658 /* Pods_StellarLbsDemoApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StellarLbsDemoApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1458D6295767A5C714450626 /* Pods-StellarLbsDemoApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplication/Pods-StellarLbsDemoApplication.release.xcconfig"; sourceTree = "<group>"; };
+		6853248001F03AAFAB690CA1 /* Pods-StellarLbsDemoApplicationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationUITests/Pods-StellarLbsDemoApplicationUITests.release.xcconfig"; sourceTree = "<group>"; };
+		75B4204A0B218C410D5BD0AF /* Pods-StellarLbsDemoApplicationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationUITests/Pods-StellarLbsDemoApplicationUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7FC9E6DBE44491615D7ACD5A /* Pods-StellarLbsDemoApplicationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationTests/Pods-StellarLbsDemoApplicationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		84C5CE582046A969005DD7D0 /* StellarLbsDemoApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StellarLbsDemoApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C5CE5B2046A969005DD7D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84C5CE5D2046A969005DD7D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84C5CE602046A969005DD7D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84C5CE622046A969005DD7D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84C5CE652046A969005DD7D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84C5CE672046A969005DD7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C5CE6C2046A969005DD7D0 /* StellarLbsDemoApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarLbsDemoApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C5CE702046A969005DD7D0 /* StellarLbsDemoApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarLbsDemoApplicationTests.swift; sourceTree = "<group>"; };
+		84C5CE722046A969005DD7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C5CE772046A969005DD7D0 /* StellarLbsDemoApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarLbsDemoApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C5CE7B2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarLbsDemoApplicationUITests.swift; sourceTree = "<group>"; };
+		84C5CE7D2046A969005DD7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C5CE892046A977005DD7D0 /* StellarLbsDemoApplication-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StellarLbsDemoApplication-Bridging-Header.h"; sourceTree = "<group>"; };
+		84D2EDC1205172970039F15B /* PoleStarLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoleStarLocationProvider.swift; sourceTree = "<group>"; };
+		84D2EDC320517F5B0039F15B /* nao.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = nao.kml; sourceTree = "<group>"; };
+		A9A1D859398F16869C1DDAFB /* Pods-StellarLbsDemoApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplication/Pods-StellarLbsDemoApplication.debug.xcconfig"; sourceTree = "<group>"; };
+		AD84338A3E8EE2F53ED42539 /* Pods_StellarLbsDemoApplicationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StellarLbsDemoApplicationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC17BC66340B453CB78E9436 /* Pods-StellarLbsDemoApplicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationTests/Pods-StellarLbsDemoApplicationTests.release.xcconfig"; sourceTree = "<group>"; };
+		E6725892C2F2BD0CA4D6C737 /* Pods_StellarLbsDemoApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StellarLbsDemoApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84C5CE552046A969005DD7D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C70B556BFA19E926FD2CAAE /* Pods_StellarLbsDemoApplication.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C5CE692046A969005DD7D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7869181B107418FBCB09B9C3 /* Pods_StellarLbsDemoApplicationTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C5CE742046A969005DD7D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA338BA84250851902292530 /* Pods_StellarLbsDemoApplicationUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		510DC1A9DBDB047985051CA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9A1D859398F16869C1DDAFB /* Pods-StellarLbsDemoApplication.debug.xcconfig */,
+				1458D6295767A5C714450626 /* Pods-StellarLbsDemoApplication.release.xcconfig */,
+				7FC9E6DBE44491615D7ACD5A /* Pods-StellarLbsDemoApplicationTests.debug.xcconfig */,
+				BC17BC66340B453CB78E9436 /* Pods-StellarLbsDemoApplicationTests.release.xcconfig */,
+				75B4204A0B218C410D5BD0AF /* Pods-StellarLbsDemoApplicationUITests.debug.xcconfig */,
+				6853248001F03AAFAB690CA1 /* Pods-StellarLbsDemoApplicationUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		84C5CE4F2046A969005DD7D0 = {
+			isa = PBXGroup;
+			children = (
+				84C5CE5A2046A969005DD7D0 /* StellarLbsDemoApplication */,
+				84C5CE6F2046A969005DD7D0 /* StellarLbsDemoApplicationTests */,
+				84C5CE7A2046A969005DD7D0 /* StellarLbsDemoApplicationUITests */,
+				84C5CE592046A969005DD7D0 /* Products */,
+				510DC1A9DBDB047985051CA4 /* Pods */,
+				DD30FD35C0ABD62E203B45BA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		84C5CE592046A969005DD7D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84C5CE582046A969005DD7D0 /* StellarLbsDemoApplication.app */,
+				84C5CE6C2046A969005DD7D0 /* StellarLbsDemoApplicationTests.xctest */,
+				84C5CE772046A969005DD7D0 /* StellarLbsDemoApplicationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84C5CE5A2046A969005DD7D0 /* StellarLbsDemoApplication */ = {
+			isa = PBXGroup;
+			children = (
+				84D2EDC320517F5B0039F15B /* nao.kml */,
+				84C5CE5B2046A969005DD7D0 /* AppDelegate.swift */,
+				84C5CE5D2046A969005DD7D0 /* ViewController.swift */,
+				84C5CE5F2046A969005DD7D0 /* Main.storyboard */,
+				84C5CE622046A969005DD7D0 /* Assets.xcassets */,
+				84C5CE642046A969005DD7D0 /* LaunchScreen.storyboard */,
+				84C5CE672046A969005DD7D0 /* Info.plist */,
+				84C5CE892046A977005DD7D0 /* StellarLbsDemoApplication-Bridging-Header.h */,
+				84D2EDC1205172970039F15B /* PoleStarLocationProvider.swift */,
+			);
+			path = StellarLbsDemoApplication;
+			sourceTree = "<group>";
+		};
+		84C5CE6F2046A969005DD7D0 /* StellarLbsDemoApplicationTests */ = {
+			isa = PBXGroup;
+			children = (
+				84C5CE702046A969005DD7D0 /* StellarLbsDemoApplicationTests.swift */,
+				84C5CE722046A969005DD7D0 /* Info.plist */,
+			);
+			path = StellarLbsDemoApplicationTests;
+			sourceTree = "<group>";
+		};
+		84C5CE7A2046A969005DD7D0 /* StellarLbsDemoApplicationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84C5CE7B2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift */,
+				84C5CE7D2046A969005DD7D0 /* Info.plist */,
+			);
+			path = StellarLbsDemoApplicationUITests;
+			sourceTree = "<group>";
+		};
+		DD30FD35C0ABD62E203B45BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6725892C2F2BD0CA4D6C737 /* Pods_StellarLbsDemoApplication.framework */,
+				AD84338A3E8EE2F53ED42539 /* Pods_StellarLbsDemoApplicationTests.framework */,
+				07B9DACAEA68958DA52AD658 /* Pods_StellarLbsDemoApplicationUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84C5CE572046A969005DD7D0 /* StellarLbsDemoApplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84C5CE802046A969005DD7D0 /* Build configuration list for PBXNativeTarget "StellarLbsDemoApplication" */;
+			buildPhases = (
+				7B71871BDE2DD0D9F66FCD51 /* [CP] Check Pods Manifest.lock */,
+				84C5CE542046A969005DD7D0 /* Sources */,
+				84C5CE552046A969005DD7D0 /* Frameworks */,
+				84C5CE562046A969005DD7D0 /* Resources */,
+				BF6FB70FD8B4366C7FC979F6 /* [CP] Embed Pods Frameworks */,
+				0F1A18640F16D9BD3E8AE59C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StellarLbsDemoApplication;
+			productName = StellarLbsDemoApplication;
+			productReference = 84C5CE582046A969005DD7D0 /* StellarLbsDemoApplication.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84C5CE6B2046A969005DD7D0 /* StellarLbsDemoApplicationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84C5CE832046A969005DD7D0 /* Build configuration list for PBXNativeTarget "StellarLbsDemoApplicationTests" */;
+			buildPhases = (
+				83FA8C3CBE44A99C2B19229C /* [CP] Check Pods Manifest.lock */,
+				84C5CE682046A969005DD7D0 /* Sources */,
+				84C5CE692046A969005DD7D0 /* Frameworks */,
+				84C5CE6A2046A969005DD7D0 /* Resources */,
+				C582A6A78A8E3E49604CA059 /* [CP] Embed Pods Frameworks */,
+				F6DDAAFC6EF0C29F58B3C6E8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84C5CE6E2046A969005DD7D0 /* PBXTargetDependency */,
+			);
+			name = StellarLbsDemoApplicationTests;
+			productName = StellarLbsDemoApplicationTests;
+			productReference = 84C5CE6C2046A969005DD7D0 /* StellarLbsDemoApplicationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84C5CE762046A969005DD7D0 /* StellarLbsDemoApplicationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84C5CE862046A969005DD7D0 /* Build configuration list for PBXNativeTarget "StellarLbsDemoApplicationUITests" */;
+			buildPhases = (
+				83E5A2D545164CFC53A0C5E7 /* [CP] Check Pods Manifest.lock */,
+				84C5CE732046A969005DD7D0 /* Sources */,
+				84C5CE742046A969005DD7D0 /* Frameworks */,
+				84C5CE752046A969005DD7D0 /* Resources */,
+				BB963806B2FE3AF1C746EB20 /* [CP] Embed Pods Frameworks */,
+				BE1D0734A8D4A3A482A3BE65 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84C5CE792046A969005DD7D0 /* PBXTargetDependency */,
+			);
+			name = StellarLbsDemoApplicationUITests;
+			productName = StellarLbsDemoApplicationUITests;
+			productReference = 84C5CE772046A969005DD7D0 /* StellarLbsDemoApplicationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84C5CE502046A969005DD7D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = ALE;
+				TargetAttributes = {
+					84C5CE572046A969005DD7D0 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					84C5CE6B2046A969005DD7D0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 84C5CE572046A969005DD7D0;
+					};
+					84C5CE762046A969005DD7D0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 84C5CE572046A969005DD7D0;
+					};
+				};
+			};
+			buildConfigurationList = 84C5CE532046A969005DD7D0 /* Build configuration list for PBXProject "StellarLbsDemoApplication" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84C5CE4F2046A969005DD7D0;
+			productRefGroup = 84C5CE592046A969005DD7D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84C5CE572046A969005DD7D0 /* StellarLbsDemoApplication */,
+				84C5CE6B2046A969005DD7D0 /* StellarLbsDemoApplicationTests */,
+				84C5CE762046A969005DD7D0 /* StellarLbsDemoApplicationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84C5CE562046A969005DD7D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C5CE662046A969005DD7D0 /* LaunchScreen.storyboard in Resources */,
+				84C5CE632046A969005DD7D0 /* Assets.xcassets in Resources */,
+				84C5CE612046A969005DD7D0 /* Main.storyboard in Resources */,
+				84D2EDC420517F5B0039F15B /* nao.kml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C5CE6A2046A969005DD7D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C5CE752046A969005DD7D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F1A18640F16D9BD3E8AE59C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StellarLbsDemoApplication/Pods-StellarLbsDemoApplication-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B71871BDE2DD0D9F66FCD51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StellarLbsDemoApplication-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83E5A2D545164CFC53A0C5E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StellarLbsDemoApplicationUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83FA8C3CBE44A99C2B19229C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StellarLbsDemoApplicationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB963806B2FE3AF1C746EB20 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StellarLbsDemoApplicationUITests/Pods-StellarLbsDemoApplicationUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE1D0734A8D4A3A482A3BE65 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StellarLbsDemoApplicationUITests/Pods-StellarLbsDemoApplicationUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF6FB70FD8B4366C7FC979F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-StellarLbsDemoApplication/Pods-StellarLbsDemoApplication-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/IndoorLocation/IndoorLocation.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
+				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${PODS_ROOT}/MapwizeForMapbox/MapwizeForMapbox.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IndoorLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapwizeForMapbox.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StellarLbsDemoApplication/Pods-StellarLbsDemoApplication-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C582A6A78A8E3E49604CA059 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StellarLbsDemoApplicationTests/Pods-StellarLbsDemoApplicationTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6DDAAFC6EF0C29F58B3C6E8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StellarLbsDemoApplicationTests/Pods-StellarLbsDemoApplicationTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84C5CE542046A969005DD7D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D2EDC2205172970039F15B /* PoleStarLocationProvider.swift in Sources */,
+				84C5CE5E2046A969005DD7D0 /* ViewController.swift in Sources */,
+				84C5CE5C2046A969005DD7D0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C5CE682046A969005DD7D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C5CE712046A969005DD7D0 /* StellarLbsDemoApplicationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C5CE732046A969005DD7D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C5CE7C2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84C5CE6E2046A969005DD7D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84C5CE572046A969005DD7D0 /* StellarLbsDemoApplication */;
+			targetProxy = 84C5CE6D2046A969005DD7D0 /* PBXContainerItemProxy */;
+		};
+		84C5CE792046A969005DD7D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84C5CE572046A969005DD7D0 /* StellarLbsDemoApplication */;
+			targetProxy = 84C5CE782046A969005DD7D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84C5CE5F2046A969005DD7D0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84C5CE602046A969005DD7D0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84C5CE642046A969005DD7D0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84C5CE652046A969005DD7D0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84C5CE7E2046A969005DD7D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84C5CE7F2046A969005DD7D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84C5CE812046A969005DD7D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9A1D859398F16869C1DDAFB /* Pods-StellarLbsDemoApplication.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93BXXFPV6U;
+				INFOPLIST_FILE = StellarLbsDemoApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = StellarLbsDemoApplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StellarLbsDemoApplication/StellarLbsDemoApplication-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84C5CE822046A969005DD7D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1458D6295767A5C714450626 /* Pods-StellarLbsDemoApplication.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93BXXFPV6U;
+				INFOPLIST_FILE = StellarLbsDemoApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = StellarLbsDemoApplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StellarLbsDemoApplication/StellarLbsDemoApplication-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84C5CE842046A969005DD7D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FC9E6DBE44491615D7ACD5A /* Pods-StellarLbsDemoApplicationTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StellarLbsDemoApplicationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ale.StellarLbsDemoApplicationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StellarLbsDemoApplication.app/StellarLbsDemoApplication";
+			};
+			name = Debug;
+		};
+		84C5CE852046A969005DD7D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC17BC66340B453CB78E9436 /* Pods-StellarLbsDemoApplicationTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StellarLbsDemoApplicationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ale.StellarLbsDemoApplicationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StellarLbsDemoApplication.app/StellarLbsDemoApplication";
+			};
+			name = Release;
+		};
+		84C5CE872046A969005DD7D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75B4204A0B218C410D5BD0AF /* Pods-StellarLbsDemoApplicationUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StellarLbsDemoApplicationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ale.StellarLbsDemoApplicationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StellarLbsDemoApplication;
+			};
+			name = Debug;
+		};
+		84C5CE882046A969005DD7D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6853248001F03AAFAB690CA1 /* Pods-StellarLbsDemoApplicationUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StellarLbsDemoApplicationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ale.StellarLbsDemoApplicationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StellarLbsDemoApplication;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84C5CE532046A969005DD7D0 /* Build configuration list for PBXProject "StellarLbsDemoApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C5CE7E2046A969005DD7D0 /* Debug */,
+				84C5CE7F2046A969005DD7D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84C5CE802046A969005DD7D0 /* Build configuration list for PBXNativeTarget "StellarLbsDemoApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C5CE812046A969005DD7D0 /* Debug */,
+				84C5CE822046A969005DD7D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84C5CE832046A969005DD7D0 /* Build configuration list for PBXNativeTarget "StellarLbsDemoApplicationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C5CE842046A969005DD7D0 /* Debug */,
+				84C5CE852046A969005DD7D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84C5CE862046A969005DD7D0 /* Build configuration list for PBXNativeTarget "StellarLbsDemoApplicationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C5CE872046A969005DD7D0 /* Debug */,
+				84C5CE882046A969005DD7D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84C5CE502046A969005DD7D0 /* Project object */;
+}
