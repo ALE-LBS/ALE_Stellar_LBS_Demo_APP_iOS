@@ -12,8 +12,11 @@ import MapwizeForMapbox
 
 class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDelegate, NAOSyncDelegate, MWZMapwizePluginDelegate, MGLMapViewDelegate, NAOGeofencingHandleDelegate {
     
+    
+    @IBOutlet var mapView: MGLMapView!
+    
     var mapWizePlugin:MapwizePlugin!
-    var mapView = MGLMapView()
+    //var mapView = MGLMapView()
     var provider:PoleStarLocationProvider = PoleStarLocationProvider.init()
     var locationHandle:NAOLocationHandle! = nil
     var geofenceHandle:NAOGeofencingHandle! = nil
@@ -83,14 +86,10 @@ class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDel
         geofenceHandle = NAOGeofencingHandle.init(key: readPropertyList(key: "NaoBrestKey"), delegate: self, sensorsDelegate: self)
         geofenceHandle.synchronizeData(self)
         geofenceHandle.start()
-        mapView = MGLMapView(frame: view.bounds)
-        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.setCenter(CLLocationCoordinate2D(latitude: 48.44159, longitude: -4.41268), zoomLevel: 17, animated: false)
-        mapView.showsUserHeadingIndicator = false
         mapWizePlugin = MapwizePlugin.init(mapView, options: MWZOptions.init())
         mapWizePlugin.delegate = self
         mapWizePlugin.mapboxDelegate = self
-        view.addSubview(mapView)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
