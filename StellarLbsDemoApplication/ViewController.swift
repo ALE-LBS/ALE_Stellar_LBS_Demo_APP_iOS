@@ -10,29 +10,44 @@ import UIKit
 import Mapbox
 import MapwizeForMapbox
 
-class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDelegate, NAOSyncDelegate, MWZMapwizePluginDelegate, MGLMapViewDelegate, NAOGeofencingHandleDelegate {
-    
-    
+class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDelegate, NAOSyncDelegate, MWZMapwizePluginDelegate, MGLMapViewDelegate, NAOGeofencingHandleDelegate, UIPickerViewDelegate, UIPickerViewDataSource , UIGestureRecognizerDelegate{
+
+    let maps = ["Brest","IBM","Buenos Aires"]
+    @IBOutlet weak var mapPicker: UIPickerView!
+    @IBOutlet weak var mapPickerView: UIView!
+    @IBOutlet weak var showMenuButton: UIBarButtonItem!
+    @IBOutlet weak var mapSelectionButton: UIBarButtonItem!
     @IBOutlet var mapView: MGLMapView!
-    
+    var pickerData: [String] = [String]()    
     var mapWizePlugin:MapwizePlugin!
-    //var mapView = MGLMapView()
     var provider:PoleStarLocationProvider = PoleStarLocationProvider.init()
     var locationHandle:NAOLocationHandle! = nil
     var geofenceHandle:NAOGeofencingHandle! = nil
+    
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return maps.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return maps[row]
+    }
     
     func didFire(_ alert: NaoAlert!) {
         NSLog("geofence")
         if(alert.rules.isEmpty == false){
             NSLog("not empty")
-            //if(alert.rules.startIndex == DBTALERTRULE.ENTERGEOFENCERULE.rawValue){
-                NSLog("entergeofence")
-                if(alert.content.starts(with: "http")){
-                    NSLog("http")
-                    //start browser
-                    UIApplication.shared.open(URL.init(string: alert.content)!, options: [:], completionHandler: nil)
-                }
-            //}
+            NSLog("entergeofence")
+            if(alert.content.starts(with: "http")){
+                NSLog("http")
+                //start browser
+                UIApplication.shared.open(URL.init(string: alert.content)!, options: [:], completionHandler: nil)
+            }
         }
         
     }
@@ -80,18 +95,16 @@ class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationHandle = NAOLocationHandle.init(key: readPropertyList(key: "NaoBrestKey"), delegate: self, sensorsDelegate: self)
-        locationHandle.synchronizeData(self)
-        locationHandle.start()
-        geofenceHandle = NAOGeofencingHandle.init(key: readPropertyList(key: "NaoBrestKey"), delegate: self, sensorsDelegate: self)
-        geofenceHandle.synchronizeData(self)
-        geofenceHandle.start()
+        mapPicker.delegate = self
+        mapPicker.dataSource = self
+        loadNaoClients(key: readPropertyList(key: "NaoBrestKey"))
         mapView.setCenter(CLLocationCoordinate2D(latitude: 48.44159, longitude: -4.41268), zoomLevel: 17, animated: false)
         mapWizePlugin = MapwizePlugin.init(mapView, options: MWZOptions.init())
         mapWizePlugin.delegate = self
         mapWizePlugin.mapboxDelegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
     
     func mapwizePluginDidLoad(_ mapwizePlugin: MapwizePlugin!) {
         mapWizePlugin.setIndoorLocationProvider(provider)
@@ -106,6 +119,39 @@ class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDel
         //add properties in Info.plist
         let result:String = Bundle.main.object(forInfoDictionaryKey: key) as! String
         return result
+    }
+    
+    @IBAction func showMenu(_ sender: Any) {
+        mapPickerView.isHidden = false
+        locationHandle.stop()
+        geofenceHandle.stop()
+    }
+    
+    @IBAction func mapSelected(_ sender: Any){
+        mapPickerView.isHidden = true
+        NSLog(String(mapPicker.selectedRow(inComponent: 0)))
+        if(mapPicker.selectedRow(inComponent: 0) == 0){
+            loadNaoClients(key: readPropertyList(key: "NaoBrestKey"))
+            mapView.setCenter(CLLocationCoordinate2D(latitude: 48.44159, longitude: -4.41268), zoomLevel: 17, animated: false)
+        }
+        if(mapPicker.selectedRow(inComponent: 0) == 1){
+            loadNaoClients(key: readPropertyList(key: "NaoIbmKey"))
+            mapView.setCenter(CLLocationCoordinate2D(latitude: 48.9063873, longitude: 2.262095), zoomLevel: 17, animated: false)
+        }
+        if(mapPicker.selectedRow(inComponent: 0) == 2){
+            loadNaoClients(key: readPropertyList(key: "NaoArgentinaKey"))
+            mapView.setCenter(CLLocationCoordinate2D(latitude: -34.526517, longitude: -58.470869), zoomLevel: 17, animated: false)
+        }
+        
+    }
+    
+    func loadNaoClients(key: String){
+        locationHandle = NAOLocationHandle.init(key: key, delegate: self, sensorsDelegate: self)
+        locationHandle.synchronizeData(self)
+        locationHandle.start()
+        geofenceHandle = NAOGeofencingHandle.init(key: key, delegate: self, sensorsDelegate: self)
+        geofenceHandle.synchronizeData(self)
+        geofenceHandle.start()
     }
 
 
