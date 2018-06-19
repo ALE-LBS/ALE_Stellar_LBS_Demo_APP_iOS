@@ -20,12 +20,6 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>MGLMapboxAccessToken</key>
-	<string>pk.eyJ1IjoidmF5bW9uaW4iLCJhIjoiY2pjdWlncWt3M2U1ajMzcGdxYTBqeGh3diJ9.dyMNTJktwr2RujuRf4n3GA</string>
-	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
-	<true/>
-	<key>MWZMapwizeApiKey</key>
-	<string>98d7bc53090ecc4da62e09269332fe5b</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
