@@ -122,17 +122,32 @@ class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDel
     override func viewDidLoad() {
         super.viewDidLoad()
         askPermissions()
+        let alert = UIAlertController(title: "Did you bring your towel?", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+        
         //mapPicker.delegate = self
         //mapPicker.dataSource = self
         mapView.setCenter(CLLocationCoordinate2D(latitude: 48.44159, longitude: -4.41268), zoomLevel: 17, animated: false)
         mapWizePlugin = MapwizePlugin.init(mapView, options: MWZOptions.init())
         mapWizePlugin.delegate = self
         mapWizePlugin.mapboxDelegate = self
-        locationHandle = NAOLocationHandle.init(key: readInfoPList(key: "NaoBrestKey"), delegate: self, sensorsDelegate: self)
-        geofenceHandle = NAOGeofencingHandle.init(key: readInfoPList(key: "NaoBrestKey"), delegate: self, sensorsDelegate: self)
-        locationHandle.synchronizeData(self)
-        geofenceHandle.synchronizeData(self)
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let OASKey = readPList(key: "OAS-Brest")
+        if  OASKey != "Error"{
+            locationHandle = NAOLocationHandle.init(key: OASKey, delegate: self, sensorsDelegate: self)
+            geofenceHandle = NAOGeofencingHandle.init(key: OASKey, delegate: self, sensorsDelegate: self)
+            locationHandle.synchronizeData(self)
+            geofenceHandle.synchronizeData(self)
+        }
+        else{
+            //ERROR
+        }
     }
     
     
@@ -146,14 +161,31 @@ class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDel
         // Dispose of any resources that can be recreated.
     }
     
-    //used to read api keys
-    func readInfoPList(key: String) -> String{
-        //add properties in Info.plist
-        if(key != "emulator"){
-            return Bundle.main.object(forInfoDictionaryKey: key) as! String
+    //Read Keys.plist
+    func readPList(key: String) -> String{
+        var keys: [String:String]?
+        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") { //if file exists
+            keys = NSDictionary(contentsOfFile: path) as? [String : String]//keys is the file content
+            for k in keys!{
+                if(k.key == key){
+                    return keys![key]!
+                }
+            }
+            NSLog("Key not found, showing alert message")
+            let alertMessage = UIAlertController(title: "Key not found", message: "Update Keys.plist file", preferredStyle: UIAlertControllerStyle.alert)
+            alertMessage.addAction(UIAlertAction(title: "Exit", style: UIAlertActionStyle.destructive, handler:{ (action:UIAlertAction!) -> Void in
+                exit(0)
+            }))
+            self.present(alertMessage, animated: true, completion: nil)
+            return "Error"
         }else{
-            return key
+            let alertMessage = UIAlertController(title: "Invalid Key", message: "Keys.plist file must be missing", preferredStyle: UIAlertControllerStyle.alert)
+            alertMessage.addAction(UIAlertAction(title: "Exit", style: UIAlertActionStyle.destructive, handler:{ (action:UIAlertAction!) -> Void in
+                exit(0)
+            }))
+            present(alertMessage,animated: true,completion: nil)
         }
+        return "Error"
+        //random error, see log files
     }
 }
-
