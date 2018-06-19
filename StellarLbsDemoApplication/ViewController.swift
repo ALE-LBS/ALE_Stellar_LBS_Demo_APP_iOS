@@ -96,15 +96,32 @@ class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDel
     }
 
     func askPermissions(){
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
-        print("Permissions")
-        print(CLLocationManager.authorizationStatus().rawValue)
+        NSLog("Permissions")
+        switch CLLocationManager.authorizationStatus(){
+        case .restricted:
+            NSLog("Location Permission Restricted");
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.requestAlwaysAuthorization()
+        case .denied:
+            NSLog("Location Permission Denied");
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.requestAlwaysAuthorization()
+        case .notDetermined:
+            NSLog("Location Permission not Determined");
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.requestAlwaysAuthorization()
+        case .authorizedAlways:
+            NSLog("Location Permission Authorized Always");
+            locationManager.requestWhenInUseAuthorization()
+        case .authorizedWhenInUse:
+            NSLog("Location Permission Authoried When In Use");
+            locationManager.requestAlwaysAuthorization()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //askPermissions()
+        askPermissions()
         //mapPicker.delegate = self
         //mapPicker.dataSource = self
         mapView.setCenter(CLLocationCoordinate2D(latitude: 48.44159, longitude: -4.41268), zoomLevel: 17, animated: false)
