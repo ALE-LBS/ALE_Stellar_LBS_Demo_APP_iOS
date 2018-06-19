@@ -17,7 +17,7 @@
 		84C5CE662046A969005DD7D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5CE642046A969005DD7D0 /* LaunchScreen.storyboard */; };
 		84C5CE712046A969005DD7D0 /* StellarLbsDemoApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE702046A969005DD7D0 /* StellarLbsDemoApplicationTests.swift */; };
 		84C5CE7C2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE7B2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift */; };
-		84C83AEF20D9303E0005274B /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84C83AEE20D9303E0005274B /* Keys.plist */; };
+		84CE3B0320D932A50028D7C3 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84CE3B0220D932A50028D7C3 /* Keys.plist */; };
 		84D2EDC2205172970039F15B /* PoleStarLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2EDC1205172970039F15B /* PoleStarLocationProvider.swift */; };
 		84D2EDC420517F5B0039F15B /* nao.kml in Resources */ = {isa = PBXBuildFile; fileRef = 84D2EDC320517F5B0039F15B /* nao.kml */; };
 		EA338BA84250851902292530 /* Pods_StellarLbsDemoApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B9DACAEA68958DA52AD658 /* Pods_StellarLbsDemoApplicationUITests.framework */; };
@@ -61,7 +61,7 @@
 		84C5CE7B2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarLbsDemoApplicationUITests.swift; sourceTree = "<group>"; };
 		84C5CE7D2046A969005DD7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C5CE892046A977005DD7D0 /* StellarLbsDemoApplication-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StellarLbsDemoApplication-Bridging-Header.h"; sourceTree = "<group>"; };
-		84C83AEE20D9303E0005274B /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		84CE3B0220D932A50028D7C3 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		84D2EDC1205172970039F15B /* PoleStarLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoleStarLocationProvider.swift; sourceTree = "<group>"; };
 		84D2EDC320517F5B0039F15B /* nao.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = nao.kml; sourceTree = "<group>"; };
 		A9A1D859398F16869C1DDAFB /* Pods-StellarLbsDemoApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplication/Pods-StellarLbsDemoApplication.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 				84C5CE672046A969005DD7D0 /* Info.plist */,
 				84C5CE892046A977005DD7D0 /* StellarLbsDemoApplication-Bridging-Header.h */,
 				84D2EDC1205172970039F15B /* PoleStarLocationProvider.swift */,
-				84C83AEE20D9303E0005274B /* Keys.plist */,
+				84CE3B0220D932A50028D7C3 /* Keys.plist */,
 			);
 			path = StellarLbsDemoApplication;
 			sourceTree = "<group>";
@@ -296,7 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C83AEF20D9303E0005274B /* Keys.plist in Resources */,
+				84CE3B0320D932A50028D7C3 /* Keys.plist in Resources */,
 				84C5CE662046A969005DD7D0 /* LaunchScreen.storyboard in Resources */,
 				84C5CE632046A969005DD7D0 /* Assets.xcassets in Resources */,
 				84C5CE612046A969005DD7D0 /* Main.storyboard in Resources */,
