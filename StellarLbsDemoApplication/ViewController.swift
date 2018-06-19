@@ -10,34 +10,18 @@ import UIKit
 import Mapbox
 import MapwizeForMapbox
 
-class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDelegate, NAOSyncDelegate, MWZMapwizePluginDelegate, MGLMapViewDelegate, NAOGeofencingHandleDelegate, UIPickerViewDelegate, UIPickerViewDataSource , UIGestureRecognizerDelegate{
-
-    let maps = ["Brest","IBM","Buenos Aires"]
-    @IBOutlet weak var mapPicker: UIPickerView!
-    @IBOutlet weak var mapPickerView: UIView!
-    @IBOutlet weak var showMenuButton: UIBarButtonItem!
-    @IBOutlet weak var mapSelectionButton: UIBarButtonItem!
+class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDelegate, NAOSyncDelegate, MWZMapwizePluginDelegate, MGLMapViewDelegate, NAOGeofencingHandleDelegate , UIGestureRecognizerDelegate{
+    
     @IBOutlet var mapView: MGLMapView!
-    var pickerData: [String] = [String]()    
+    @IBOutlet weak var navigationTitle: UINavigationItem!
+    var pickerData: [String] = [String]()
     var mapWizePlugin:MapwizePlugin!
-    var provider:PoleStarLocationProvider = PoleStarLocationProvider.init()
-    var locationHandle:NAOLocationHandle! = nil
-    var geofenceHandle:NAOGeofencingHandle! = nil
+    var poleStarLocationProvider:PoleStarLocationProvider = PoleStarLocationProvider.init()
+    var locationHandle: NAOLocationHandle!
+    var geofenceHandle: NAOGeofencingHandle!
+    let locationManager = CLLocationManager()
     
-    
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return maps.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return maps[row]
-    }
-    
+    //I.E. GeoNotification
     func didFire(_ alert: NaoAlert!) {
         NSLog("geofence")
         if(alert.rules.isEmpty == false){
@@ -55,6 +39,7 @@ class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDel
     func didSynchronizationSuccess() {
         NSLog("didSynchronizationSuccess")
         locationHandle.start()
+        geofenceHandle.start()
     }
     
     func didSynchronizationFailure(_ errorCode: DBNAOERRORCODE, msg message: String!) {
@@ -83,31 +68,60 @@ class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDel
     
     func didLocationChange(_ location: CLLocation!) {
         NSLog("didLocationChange")
-        NSLog(location.coordinate.latitude.description)
-        NSLog(location.coordinate.longitude.description)
-        let indoorLocation:ILIndoorLocation = ILIndoorLocation.init(provider: provider, latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, floor: 0)
-        provider.setLocation(indoorLocation: indoorLocation)
+        if(location.timestamp.timeIntervalSinceNow > -10.0){ //deleting cached positions
+            let indoorLocation:ILIndoorLocation = ILIndoorLocation.init(provider: poleStarLocationProvider, latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, floor: 0) //Creation of the indoorLocation
+            poleStarLocationProvider.setLocation(indoorLocation: indoorLocation)
+            navigationTitle.title = location.coordinate.latitude.description + " " + location.coordinate.longitude.description
+        }
     }
     
     func didLocationStatusChanged(_ status: DBTNAOFIXSTATUS) {
         NSLog("didLocationStatusChanged")
+        if(status==DBTNAOFIXSTATUS.NAO_FIX_AVAILABLE){
+            NSLog("NAO fix available")
+        }
+        if(status==DBTNAOFIXSTATUS.NAO_FIX_UNAVAILABLE){
+            NSLog("NAO fix unavailable")
+        }
+        if(status==DBTNAOFIXSTATUS.NAO_OUT_OF_SERVICE){
+            NSLog("NAO out of service")
+        }
+        if(status==DBTNAOFIXSTATUS.NAO_TEMPORARY_UNAVAILABLE){
+            NSLog("NAO temporary unavailable")
+        }
+        //TODO Find why emulation works and real positionning doesn't
+        //Most of the time error message is NAO TEMPORARY UNAVAILABLE
+        //Idk if bluetooth doesn't work properly or if permissions is missing (see how to ask permission)
+        //TODO Find a way to store log file
     }
 
+    func askPermissions(){
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        print("Permissions")
+        print(CLLocationManager.authorizationStatus().rawValue)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapPicker.delegate = self
-        mapPicker.dataSource = self
-        loadNaoClients(key: readPropertyList(key: "NaoBrestKey"))
+        //askPermissions()
+        //mapPicker.delegate = self
+        //mapPicker.dataSource = self
         mapView.setCenter(CLLocationCoordinate2D(latitude: 48.44159, longitude: -4.41268), zoomLevel: 17, animated: false)
         mapWizePlugin = MapwizePlugin.init(mapView, options: MWZOptions.init())
         mapWizePlugin.delegate = self
         mapWizePlugin.mapboxDelegate = self
+        locationHandle = NAOLocationHandle.init(key: readInfoPList(key: "NaoBrestKey"), delegate: self, sensorsDelegate: self)
+        geofenceHandle = NAOGeofencingHandle.init(key: readInfoPList(key: "NaoBrestKey"), delegate: self, sensorsDelegate: self)
+        locationHandle.synchronizeData(self)
+        geofenceHandle.synchronizeData(self)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     
     func mapwizePluginDidLoad(_ mapwizePlugin: MapwizePlugin!) {
-        mapWizePlugin.setIndoorLocationProvider(provider)
+        NSLog("mapwizePluginDidLoad")
+        mapWizePlugin.setIndoorLocationProvider(poleStarLocationProvider)
     }
     
     override func didReceiveMemoryWarning() {
@@ -115,45 +129,14 @@ class ViewController: UIViewController, NAOLocationHandleDelegate, NAOSensorsDel
         // Dispose of any resources that can be recreated.
     }
     
-    func readPropertyList(key: String) -> String{
+    //used to read api keys
+    func readInfoPList(key: String) -> String{
         //add properties in Info.plist
-        let result:String = Bundle.main.object(forInfoDictionaryKey: key) as! String
-        return result
-    }
-    
-    @IBAction func showMenu(_ sender: Any) {
-        mapPickerView.isHidden = false
-        locationHandle.stop()
-        geofenceHandle.stop()
-    }
-    
-    @IBAction func mapSelected(_ sender: Any){
-        mapPickerView.isHidden = true
-        NSLog(String(mapPicker.selectedRow(inComponent: 0)))
-        if(mapPicker.selectedRow(inComponent: 0) == 0){
-            loadNaoClients(key: readPropertyList(key: "NaoBrestKey"))
-            mapView.setCenter(CLLocationCoordinate2D(latitude: 48.44159, longitude: -4.41268), zoomLevel: 17, animated: false)
+        if(key != "emulator"){
+            return Bundle.main.object(forInfoDictionaryKey: key) as! String
+        }else{
+            return key
         }
-        if(mapPicker.selectedRow(inComponent: 0) == 1){
-            loadNaoClients(key: readPropertyList(key: "NaoIbmKey"))
-            mapView.setCenter(CLLocationCoordinate2D(latitude: 48.9063873, longitude: 2.262095), zoomLevel: 17, animated: false)
-        }
-        if(mapPicker.selectedRow(inComponent: 0) == 2){
-            loadNaoClients(key: readPropertyList(key: "NaoArgentinaKey"))
-            mapView.setCenter(CLLocationCoordinate2D(latitude: -34.526517, longitude: -58.470869), zoomLevel: 17, animated: false)
-        }
-        
     }
-    
-    func loadNaoClients(key: String){
-        locationHandle = NAOLocationHandle.init(key: key, delegate: self, sensorsDelegate: self)
-        locationHandle.synchronizeData(self)
-        locationHandle.start()
-        geofenceHandle = NAOGeofencingHandle.init(key: key, delegate: self, sensorsDelegate: self)
-        geofenceHandle.synchronizeData(self)
-        geofenceHandle.start()
-    }
-
-
 }
 

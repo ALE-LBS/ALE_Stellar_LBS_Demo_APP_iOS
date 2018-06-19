@@ -11,24 +11,28 @@ import MapwizeForMapbox
 
 class PoleStarLocationProvider: ILIndoorLocationProvider {
     
+    var isStartedVar = false
+    
     func supportFloor() -> Bool{
         return false
     }
     
     override func start(){
-        //code
+        isStartedVar = true
     }
     
     override func stop(){
-        //code
+        isStartedVar = false
     }
     
     override func isStarted() -> Bool{
-        return true
+        return isStartedVar
     }
     
     func setLocation(indoorLocation:ILIndoorLocation){
-        self.dispatchDidUpdate(indoorLocation)
+        if(isStartedVar){
+            self.dispatchDidUpdate(indoorLocation)
+        }
     }
     
 }
