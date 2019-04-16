@@ -9,6 +9,7 @@
 import Foundation
 import MapwizeForMapbox
 
+//
 class PoleStarLocationProvider: ILIndoorLocationProvider {
     
     var isStartedVar = false

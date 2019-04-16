@@ -16,10 +16,21 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict/>
+		<dict/>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoidmF5bW9uaW4iLCJhIjoiY2pjdWlncWt3M2U1ajMzcGdxYTBqeGh3diJ9.dyMNTJktwr2RujuRf4n3GA</string>
+	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
+	<true/>
+	<key>MWZMapwizeApiKey</key>
+	<string>98d7bc53090ecc4da62e09269332fe5b</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -44,12 +55,12 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>OmniAccess Stellar LBS SDK will have access to your location information when using the application</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>OmniAccess Stellar LBS SDK will have access to your location information when using the application</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>OmniAccess Stellar LBS SDK will have access to your location information when using the application</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>OmniAccess Stellar LBS SDK will have access to your location information when using the application</string>
+	<string></string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
@@ -76,11 +87,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
-	<true/>
-	<key>MWZMapwizeApiKey</key>
-	<string>98d7bc53090ecc4da62e09269332fe5b</string>
-	<key>MGLMapboxAccessToken</key>
-	<string>pk.eyJ1IjoidmF5bW9uaW4iLCJhIjoiY2pjdWlncWt3M2U1ajMzcGdxYTBqeGh3diJ9.dyMNTJktwr2RujuRf4n3GA</string>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict/>
+	</array>
 </dict>
 </plist>
