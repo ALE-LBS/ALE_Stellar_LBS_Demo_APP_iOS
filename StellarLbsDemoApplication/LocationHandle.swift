@@ -10,6 +10,12 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
     
     var locationHandle : NAOLocationHandle?
     var geofencingHandle : NAOGeofencingHandle?
+    var masterViewController: MasterViewController?
+    
+    init(masterViewController:MasterViewController?) {
+        super.init()
+        self.masterViewController = masterViewController
+    }
     
     func initLocation(key:String){
         locationHandle = NAOLocationHandle.init(key: key, delegate: self, sensorsDelegate: self)
@@ -104,18 +110,18 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
     
     //NAOSensorDelegate
     func requiresWifiOn() {
-        ViewController.displayMessage(title: "Wifi Required", message: "This app requires Wifi ON")
+        masterViewController!.displayMessage(title: "Wifi Required", message: "This app requires Wifi ON")
     }
     
     func requiresBLEOn() {
-        ViewController.displayMessage(title: "Bluetooth Required", message: "This app requires Blutooth ON")
+        masterViewController!.displayMessage(title: "Bluetooth Required", message: "This app requires Blutooth ON")
     }
     
     func requiresLocationOn() {
-        ViewController.displayMessage(title: "Location Services Required", message: "The app needs to access your location")
+        masterViewController!.displayMessage(title: "Location Services Required", message: "The app needs to access your location")
     }
     
     func requiresCompassCalibration() {
-        ViewController.displayMessage(title: "Compass Calibration Required", message: "Youu need to recalibrate the compass")
+        masterViewController!.displayMessage(title: "Compass Calibration Required", message: "Youu need to recalibrate the compass")
     }
 }

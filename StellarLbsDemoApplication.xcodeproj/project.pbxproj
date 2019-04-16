@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		841134FD2056C523007A23F3 /* alerts_emulator.json in Resources */ = {isa = PBXBuildFile; fileRef = 841134FC2056C523007A23F3 /* alerts_emulator.json */; };
 		84C5CE5C2046A969005DD7D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE5B2046A969005DD7D0 /* AppDelegate.swift */; };
-		84C5CE5E2046A969005DD7D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE5D2046A969005DD7D0 /* ViewController.swift */; };
+		84C5CE5E2046A969005DD7D0 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE5D2046A969005DD7D0 /* MasterViewController.swift */; };
 		84C5CE612046A969005DD7D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5CE5F2046A969005DD7D0 /* Main.storyboard */; };
 		84C5CE632046A969005DD7D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C5CE622046A969005DD7D0 /* Assets.xcassets */; };
 		84C5CE662046A969005DD7D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5CE642046A969005DD7D0 /* LaunchScreen.storyboard */; };
@@ -19,6 +19,8 @@
 		84D2EDC2205172970039F15B /* PoleStarLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2EDC1205172970039F15B /* PoleStarLocationProvider.swift */; };
 		84D2EDC420517F5B0039F15B /* nao.kml in Resources */ = {isa = PBXBuildFile; fileRef = 84D2EDC320517F5B0039F15B /* nao.kml */; };
 		BF69E1A62264A3030005BEF1 /* LocationHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A52264A3030005BEF1 /* LocationHandle.swift */; };
+		BF69E1A82265FCD90005BEF1 /* MapWizeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A72265FCD90005BEF1 /* MapWizeController.swift */; };
+		BF69E1AA2265FCF10005BEF1 /* VisioGlobeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A92265FCF10005BEF1 /* VisioGlobeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +48,7 @@
 		841134FC2056C523007A23F3 /* alerts_emulator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = alerts_emulator.json; sourceTree = "<group>"; };
 		84C5CE582046A969005DD7D0 /* StellarLbsDemoApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StellarLbsDemoApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C5CE5B2046A969005DD7D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84C5CE5D2046A969005DD7D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84C5CE5D2046A969005DD7D0 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		84C5CE602046A969005DD7D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84C5CE622046A969005DD7D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84C5CE652046A969005DD7D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,6 +66,8 @@
 		A9A1D859398F16869C1DDAFB /* Pods-StellarLbsDemoApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplication/Pods-StellarLbsDemoApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		BC17BC66340B453CB78E9436 /* Pods-StellarLbsDemoApplicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationTests/Pods-StellarLbsDemoApplicationTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF69E1A52264A3030005BEF1 /* LocationHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandle.swift; sourceTree = "<group>"; };
+		BF69E1A72265FCD90005BEF1 /* MapWizeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWizeController.swift; sourceTree = "<group>"; };
+		BF69E1A92265FCF10005BEF1 /* VisioGlobeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisioGlobeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +135,9 @@
 				841134FC2056C523007A23F3 /* alerts_emulator.json */,
 				84D2EDC320517F5B0039F15B /* nao.kml */,
 				84C5CE5B2046A969005DD7D0 /* AppDelegate.swift */,
-				84C5CE5D2046A969005DD7D0 /* ViewController.swift */,
+				84C5CE5D2046A969005DD7D0 /* MasterViewController.swift */,
+				BF69E1A72265FCD90005BEF1 /* MapWizeController.swift */,
+				BF69E1A92265FCF10005BEF1 /* VisioGlobeController.swift */,
 				BF69E1A52264A3030005BEF1 /* LocationHandle.swift */,
 				84D2EDC1205172970039F15B /* PoleStarLocationProvider.swift */,
 				84C5CE5F2046A969005DD7D0 /* Main.storyboard */,
@@ -391,7 +397,9 @@
 			files = (
 				84D2EDC2205172970039F15B /* PoleStarLocationProvider.swift in Sources */,
 				BF69E1A62264A3030005BEF1 /* LocationHandle.swift in Sources */,
-				84C5CE5E2046A969005DD7D0 /* ViewController.swift in Sources */,
+				84C5CE5E2046A969005DD7D0 /* MasterViewController.swift in Sources */,
+				BF69E1A82265FCD90005BEF1 /* MapWizeController.swift in Sources */,
+				BF69E1AA2265FCF10005BEF1 /* VisioGlobeController.swift in Sources */,
 				84C5CE5C2046A969005DD7D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
