@@ -16,11 +16,14 @@
 		84C5CE712046A969005DD7D0 /* StellarLbsDemoApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE702046A969005DD7D0 /* StellarLbsDemoApplicationTests.swift */; };
 		84C5CE7C2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE7B2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift */; };
 		84CE3B0320D932A50028D7C3 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84CE3B0220D932A50028D7C3 /* Keys.plist */; };
-		84D2EDC2205172970039F15B /* PoleStarLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2EDC1205172970039F15B /* PoleStarLocationProvider.swift */; };
+		84D2EDC2205172970039F15B /* OASLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2EDC1205172970039F15B /* OASLocationProvider.swift */; };
 		84D2EDC420517F5B0039F15B /* nao.kml in Resources */ = {isa = PBXBuildFile; fileRef = 84D2EDC320517F5B0039F15B /* nao.kml */; };
+		B28E1473F993E8F6A88AD130 /* Pods_StellarLbsDemoApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916D782E4617D51A73E9A464 /* Pods_StellarLbsDemoApplication.framework */; };
 		BF69E1A62264A3030005BEF1 /* LocationHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A52264A3030005BEF1 /* LocationHandle.swift */; };
 		BF69E1A82265FCD90005BEF1 /* MapWizeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A72265FCD90005BEF1 /* MapWizeController.swift */; };
 		BF69E1AA2265FCF10005BEF1 /* VisioGlobeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A92265FCF10005BEF1 /* VisioGlobeController.swift */; };
+		DECECF9C4C0DA0AAD3CAD503 /* Pods_StellarLbsDemoApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528FEEC4EBE6675C93728FD8 /* Pods_StellarLbsDemoApplicationTests.framework */; };
+		E95272645DBC70505313AA91 /* Pods_StellarLbsDemoApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14235BB84A36676A8BE371B5 /* Pods_StellarLbsDemoApplicationUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14235BB84A36676A8BE371B5 /* Pods_StellarLbsDemoApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StellarLbsDemoApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1458D6295767A5C714450626 /* Pods-StellarLbsDemoApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplication/Pods-StellarLbsDemoApplication.release.xcconfig"; sourceTree = "<group>"; };
+		528FEEC4EBE6675C93728FD8 /* Pods_StellarLbsDemoApplicationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StellarLbsDemoApplicationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6853248001F03AAFAB690CA1 /* Pods-StellarLbsDemoApplicationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationUITests/Pods-StellarLbsDemoApplicationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75B4204A0B218C410D5BD0AF /* Pods-StellarLbsDemoApplicationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationUITests/Pods-StellarLbsDemoApplicationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FC9E6DBE44491615D7ACD5A /* Pods-StellarLbsDemoApplicationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationTests/Pods-StellarLbsDemoApplicationTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -61,8 +66,9 @@
 		84C5CE7D2046A969005DD7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C5CE892046A977005DD7D0 /* StellarLbsDemoApplication-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StellarLbsDemoApplication-Bridging-Header.h"; sourceTree = "<group>"; };
 		84CE3B0220D932A50028D7C3 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
-		84D2EDC1205172970039F15B /* PoleStarLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoleStarLocationProvider.swift; sourceTree = "<group>"; };
+		84D2EDC1205172970039F15B /* OASLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OASLocationProvider.swift; sourceTree = "<group>"; };
 		84D2EDC320517F5B0039F15B /* nao.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = nao.kml; sourceTree = "<group>"; };
+		916D782E4617D51A73E9A464 /* Pods_StellarLbsDemoApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StellarLbsDemoApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A1D859398F16869C1DDAFB /* Pods-StellarLbsDemoApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplication/Pods-StellarLbsDemoApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		BC17BC66340B453CB78E9436 /* Pods-StellarLbsDemoApplicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationTests/Pods-StellarLbsDemoApplicationTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF69E1A52264A3030005BEF1 /* LocationHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandle.swift; sourceTree = "<group>"; };
@@ -75,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28E1473F993E8F6A88AD130 /* Pods_StellarLbsDemoApplication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DECECF9C4C0DA0AAD3CAD503 /* Pods_StellarLbsDemoApplicationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,12 +97,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E95272645DBC70505313AA91 /* Pods_StellarLbsDemoApplicationUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		035B93774C49E21683CE0C8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				916D782E4617D51A73E9A464 /* Pods_StellarLbsDemoApplication.framework */,
+				528FEEC4EBE6675C93728FD8 /* Pods_StellarLbsDemoApplicationTests.framework */,
+				14235BB84A36676A8BE371B5 /* Pods_StellarLbsDemoApplicationUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		510DC1A9DBDB047985051CA4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +135,7 @@
 				84C5CE7A2046A969005DD7D0 /* StellarLbsDemoApplicationUITests */,
 				84C5CE592046A969005DD7D0 /* Products */,
 				510DC1A9DBDB047985051CA4 /* Pods */,
+				035B93774C49E21683CE0C8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,7 +159,7 @@
 				BF69E1A72265FCD90005BEF1 /* MapWizeController.swift */,
 				BF69E1A92265FCF10005BEF1 /* VisioGlobeController.swift */,
 				BF69E1A52264A3030005BEF1 /* LocationHandle.swift */,
-				84D2EDC1205172970039F15B /* PoleStarLocationProvider.swift */,
+				84D2EDC1205172970039F15B /* OASLocationProvider.swift */,
 				84C5CE5F2046A969005DD7D0 /* Main.storyboard */,
 				84C5CE622046A969005DD7D0 /* Assets.xcassets */,
 				84C5CE642046A969005DD7D0 /* LaunchScreen.storyboard */,
@@ -369,19 +389,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-StellarLbsDemoApplication/Pods-StellarLbsDemoApplication-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/IndoorLocation/IndoorLocation.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
 				"${PODS_ROOT}/MapwizeForMapbox/MapwizeForMapbox.framework",
+				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IndoorLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapwizeForMapbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -395,7 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D2EDC2205172970039F15B /* PoleStarLocationProvider.swift in Sources */,
+				84D2EDC2205172970039F15B /* OASLocationProvider.swift in Sources */,
 				BF69E1A62264A3030005BEF1 /* LocationHandle.swift in Sources */,
 				84C5CE5E2046A969005DD7D0 /* MasterViewController.swift in Sources */,
 				BF69E1A82265FCD90005BEF1 /* MapWizeController.swift in Sources */,

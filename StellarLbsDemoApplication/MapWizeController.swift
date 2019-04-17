@@ -7,7 +7,43 @@
 //
 
 import UIKit
+import Mapbox
+import MapwizeForMapbox
 
-class MapWizeController: UIViewController {
+class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewDelegate {
+    
+    var mapwizePlugin:MapwizePlugin!
+    var locationProvider:OASLocationProvider = OASLocationProvider.init()
+    var isLocationProviderSet:Bool=false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //MapBox
+        let url = URL(string: "https://outdoor.mapwize.io/styles/mapwize/style.json?key=98d7bc53090ecc4da62e09269332fe5b")
+        let mglMapView = MGLMapView(frame: view.bounds, styleURL: url)
+        mglMapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        mglMapView.setCenter(CLLocationCoordinate2D(latitude: 48.441637506411176, longitude: -4.4127606743614365),zoomLevel: 17, animated: true)
+        view.addSubview(mglMapView)
+        //MapWize
+        mapwizePlugin = MapwizePlugin(mglMapView, options:MWZOptions())
+        mapwizePlugin.delegate = self
+        mapwizePlugin.mapboxDelegate = self
+        //LocationProvider
+        locationProvider.start()
+    }
+    
+    //Tell Indoor Location Provider to update the location on the map
+    func setUserPosition(_ coordinates: CLLocationCoordinate2D){
+        if(!isLocationProviderSet){
+            mapwizePlugin.setIndoorLocationProvider(locationProvider)
+            isLocationProviderSet=true
+        }
+        if(locationProvider.isDispatchStarted){
+            let indoorLocation = ILIndoorLocation.init(provider: locationProvider, latitude: coordinates.latitude, longitude: coordinates.longitude, floor: 0)!
+            locationProvider.setLocation(indoorLocation: indoorLocation)
+        }
+    }
+    
 
 }

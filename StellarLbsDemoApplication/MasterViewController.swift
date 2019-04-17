@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import Mapbox
-import MapwizeForMapbox
 
-class MasterViewController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewDelegate , UIGestureRecognizerDelegate{
+class MasterViewController: UIViewController , UIGestureRecognizerDelegate{
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     var locationHandle:LocationHandle? = nil
@@ -22,12 +20,12 @@ class MasterViewController: UIViewController, MWZMapwizePluginDelegate, MGLMapVi
         //askPermissions()
         setupView()
         locationHandle = LocationHandle.init(masterViewController: self)
-        let alert = UIAlertController(title: "Did you bring your towel?", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
+        /*let alert = UIAlertController(title: "Did you bring your towel?", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
         OperationQueue.main.addOperation { //adding to operation queue (display when it's possible)
             self.present(alert, animated: true)
-        }
+        }*/
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,7 +46,7 @@ class MasterViewController: UIViewController, MWZMapwizePluginDelegate, MGLMapVi
     
     
     // Multi View Controller Tutorial from https://cocoacasts.com/managing-view-controllers-with-container-view-controllers/
-    private lazy var mapWizeController: MapWizeController = {
+    lazy var mapWizeController: MapWizeController = {
         //Load Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         //Instanciate View Controller
@@ -58,7 +56,7 @@ class MasterViewController: UIViewController, MWZMapwizePluginDelegate, MGLMapVi
         return viewController
     }()
     
-    private lazy var visioGlobeController: VisioGlobeController = {
+    lazy var visioGlobeController: VisioGlobeController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "VisioGlobeController") as! VisioGlobeController
         self.add(asChildViewController:viewController)

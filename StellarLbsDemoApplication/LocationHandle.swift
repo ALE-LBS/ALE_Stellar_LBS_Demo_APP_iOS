@@ -91,6 +91,8 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
         NSLog("didLocationChange")
         NSLog("latitude: " + location.coordinate.latitude.description)
         NSLog("longitude: " + location.coordinate.longitude.description)
+        masterViewController?.mapWizeController.setUserPosition(location.coordinate)
+        
     }
     
     func didLocationStatusChanged(_ status: DBTNAOFIXSTATUS) {
