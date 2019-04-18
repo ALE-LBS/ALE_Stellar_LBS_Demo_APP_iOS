@@ -52,17 +52,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="2lS-OB-5Jk">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="G2Y-br-2jF">
-                            <rect key="frame" x="146.66666666666666" y="7.6666666666666679" width="120.99999999999997" height="29.000000000000004"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
-                            </segments>
-                        </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="HMa-NW-DBh">
+                            <connections>
+                                <action selector="selectMap:" destination="cL6-JV-RKS" id="zMq-M7-7Yu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="segmentedControl" destination="G2Y-br-2jF" id="Apv-sJ-cVV"/>
+                        <outlet property="navigationButton" destination="HMa-NW-DBh" id="UQy-sJ-lZy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhA-UM-50E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -93,6 +90,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9D-Qv-dxu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="15.942028985507248" y="-602.44565217391312"/>
+        </scene>
+        <!--Initial View Controller-->
+        <scene sceneID="ytV-M6-vvb">
+            <objects>
+                <viewController storyboardIdentifier="InitialViewController" id="V1r-Vq-7V7" customClass="InitialViewController" customModule="StellarLbsDemoApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CQD-ly-IZd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="xpb-fv-j4W"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qyS-LJ-kfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1135" y="-602"/>
         </scene>
     </scenes>
 </document>

@@ -40,7 +40,7 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
         geofencingHandle?.synchronizeData(self)
     }
     
-    func setMapSelected(mapSelected:Map){
+    func setMapSelected(_ mapSelected:Map){
         self.mapSelected = mapSelected
     }
     
@@ -152,11 +152,3 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
     }
 }
 
-enum Map{
-    case MapWize
-    case BrestVisio
-    case Colombes
-    case Transportation
-    case Hospitality
-    case Healthcare
-}

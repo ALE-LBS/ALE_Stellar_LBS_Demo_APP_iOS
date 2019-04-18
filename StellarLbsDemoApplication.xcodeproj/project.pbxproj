@@ -22,6 +22,8 @@
 		BF69E1A62264A3030005BEF1 /* LocationHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A52264A3030005BEF1 /* LocationHandle.swift */; };
 		BF69E1A82265FCD90005BEF1 /* MapWizeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A72265FCD90005BEF1 /* MapWizeController.swift */; };
 		BF69E1AA2265FCF10005BEF1 /* VisioGlobeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A92265FCF10005BEF1 /* VisioGlobeController.swift */; };
+		BF85C2722268AD3700EB712D /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85C2712268AD3700EB712D /* InitialViewController.swift */; };
+		BF85C2742268B22E00EB712D /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85C2732268B22E00EB712D /* Map.swift */; };
 		BF8BCC6122671F2C00E995B6 /* VisioMoveEssential.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF8BCC5F22671F2B00E995B6 /* VisioMoveEssential.bundle */; };
 		BF8BCC6222671F2C00E995B6 /* VisioMoveEssentialStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF8BCC6022671F2B00E995B6 /* VisioMoveEssentialStrings.bundle */; };
 		BFBEC5F1226769CF00C62392 /* VisioMoveEssential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBEC5F0226769CF00C62392 /* VisioMoveEssential.framework */; };
@@ -87,6 +89,8 @@
 		BF69E1A52264A3030005BEF1 /* LocationHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandle.swift; sourceTree = "<group>"; };
 		BF69E1A72265FCD90005BEF1 /* MapWizeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWizeController.swift; sourceTree = "<group>"; };
 		BF69E1A92265FCF10005BEF1 /* VisioGlobeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisioGlobeController.swift; sourceTree = "<group>"; };
+		BF85C2712268AD3700EB712D /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		BF85C2732268B22E00EB712D /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		BF8BCC5D22671EE700E995B6 /* VisioMoveEssential.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VisioMoveEssential.framework; sourceTree = "<group>"; };
 		BF8BCC5F22671F2B00E995B6 /* VisioMoveEssential.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = VisioMoveEssential.bundle; sourceTree = "<group>"; };
 		BF8BCC6022671F2B00E995B6 /* VisioMoveEssentialStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = VisioMoveEssentialStrings.bundle; sourceTree = "<group>"; };
@@ -218,7 +222,9 @@
 				84C5CE5D2046A969005DD7D0 /* MasterViewController.swift */,
 				BF69E1A72265FCD90005BEF1 /* MapWizeController.swift */,
 				BF69E1A92265FCF10005BEF1 /* VisioGlobeController.swift */,
+				BF85C2712268AD3700EB712D /* InitialViewController.swift */,
 				BF69E1A52264A3030005BEF1 /* LocationHandle.swift */,
+				BF85C2732268B22E00EB712D /* Map.swift */,
 				84D2EDC1205172970039F15B /* OASLocationProvider.swift */,
 				84C5CE5F2046A969005DD7D0 /* Main.storyboard */,
 				84C5CE622046A969005DD7D0 /* Assets.xcassets */,
@@ -478,6 +484,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D2EDC2205172970039F15B /* OASLocationProvider.swift in Sources */,
+				BF85C2722268AD3700EB712D /* InitialViewController.swift in Sources */,
+				BF85C2742268B22E00EB712D /* Map.swift in Sources */,
 				BF69E1A62264A3030005BEF1 /* LocationHandle.swift in Sources */,
 				84C5CE5E2046A969005DD7D0 /* MasterViewController.swift in Sources */,
 				BF69E1A82265FCD90005BEF1 /* MapWizeController.swift in Sources */,

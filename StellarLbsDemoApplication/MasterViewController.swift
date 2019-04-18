@@ -10,22 +10,16 @@ import UIKit
 
 class MasterViewController: UIViewController , UIGestureRecognizerDelegate{
     
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var navigationButton: UIBarButtonItem!
     var locationHandle:LocationHandle? = nil
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //askPermissions()
+        askPermissions()
         setupView()
         locationHandle = LocationHandle.init(masterViewController: self)
-        /*let alert = UIAlertController(title: "Did you bring your towel?", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
-        OperationQueue.main.addOperation { //adding to operation queue (display when it's possible)
-            self.present(alert, animated: true)
-        }*/
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,34 +39,30 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate{
     }
     
     
-    // Multi View Controller Tutorial from https://cocoacasts.com/managing-view-controllers-with-container-view-controllers/
+    // Adapted Multi View Controller Tutorial from https://cocoacasts.com/managing-view-controllers-with-container-view-controllers/
     lazy var mapWizeController: MapWizeController = {
         //Load Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         //Instanciate View Controller
         var viewController = storyboard.instantiateViewController(withIdentifier: "MapWizeController") as! MapWizeController
         //Add View Controller as Child View Controller
-        self.add(asChildViewController:viewController)
+        //self.add(asChildViewController:viewController)
         return viewController
     }()
     
     lazy var visioGlobeController: VisioGlobeController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "VisioGlobeController") as! VisioGlobeController
-        self.add(asChildViewController:viewController)
+        //self.add(asChildViewController:viewController)
         return viewController
     }()
     
-    private func setupSegmentedControl(){
-        segmentedControl.removeAllSegments()
-        segmentedControl.insertSegment(withTitle: "Mapwize", at: 0, animated: true)
-        segmentedControl.insertSegment(withTitle: "Visioglobe", at: 1, animated: true)
-        segmentedControl.addTarget(self, action: #selector( selectionDidChange(_:)) , for: .valueChanged)
-    }
-    
-    @objc func selectionDidChange(_ sender: UISegmentedControl){
-        updateView()
-    }
+    lazy var initialViewController: InitialViewController = {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        var viewController = storyboard.instantiateViewController(withIdentifier: "InitialViewController") as! InitialViewController
+        self.add(asChildViewController:viewController)
+        return viewController
+    }()
     
     private func add(asChildViewController viewController:UIViewController){
         addChild(viewController)
@@ -88,23 +78,41 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate{
         viewController.removeFromParent()
     }
     
-    private func updateView(){
-        //locationHandle?.restartLocation(key: "oui")
-        if segmentedControl.selectedSegmentIndex == 0 {
-            locationHandle?.setMapSelected(mapSelected: Map.MapWize)
-            remove(asChildViewController: visioGlobeController)
-            add(asChildViewController: mapWizeController)
-        }else{
-            locationHandle?.setMapSelected(mapSelected: Map.BrestVisio)
-            remove(asChildViewController: mapWizeController)
-            add(asChildViewController: visioGlobeController)
+    private func removeAll(){
+        self.children.forEach{ child in
+            self.remove(asChildViewController: child)
+        }
+    }
+
+    private func setView(asChildViewController viewController:UIViewController, mapSelected:Map){
+        locationHandle?.setMapSelected(mapSelected)
+        removeAll()
+        add(asChildViewController: viewController)
+    }
+
+    @IBAction func selectMap(_ sender: Any?) {
+        let message = UIAlertController(title: "Select Map", message: "Select your map", preferredStyle: .actionSheet)
+        message.addAction(UIAlertAction(title:"Brest VisioGlobe", style: .default, handler: {(action:UIAlertAction!) -> Void in
+            self.setView(asChildViewController: self.visioGlobeController, mapSelected: Map.BrestVisio)}))
+        message.addAction(UIAlertAction(title: "Brest Mapwize", style: .default, handler: {(action:UIAlertAction!) -> Void in
+            self.setView(asChildViewController: self.mapWizeController, mapSelected: Map.MapWize)}))
+        OperationQueue.main.addOperation {
+            self.present(message,animated: true, completion: nil)
         }
     }
     
-    private func setupView(){
-        setupSegmentedControl()
-        updateView()
+    private func setupInitialView(){
+        removeAll()
+        add(asChildViewController: initialViewController)
     }
+    
+    private func setupView(){
+        setupInitialView()
+        selectMap(nil)
+    }
+    
+    //***********************************************************
+    
     
     private func askPermissions(){
         NSLog("Permissions")
