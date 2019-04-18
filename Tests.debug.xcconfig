@@ -1,0 +1,19 @@
+// Copyright (c) Visioglobe SAS. All rights reserved.
+//
+// This file is subject to the terms and conditions defined in
+// file 'LICENSE.txt', which is part of this source code package.
+
+#include "Pods/Target Support Files/Pods-StellarLbsDemoApplicationTests/Pods-StellarLbsDemoApplicationTests.debug.xcconfig"
+
+
+// Packaging
+PRODUCT_NAME = $(TARGET_NAME)
+
+// Packaging
+WRAPPER_EXTENSION = xctest
+
+// Deployment
+IPHONEOS_DEPLOYMENT_TARGET = 11.2
+
+
+

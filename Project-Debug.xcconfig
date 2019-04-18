@@ -1,0 +1,23 @@
+// Copyright (c) Visioglobe SAS. All rights reserved.
+//
+// This file is subject to the terms and conditions defined in
+// file 'LICENSE.txt', which is part of this source code package.
+
+#include "Pods/Target Support Files/Pods-StellarLbsDemoApplication/Pods-StellarLbsDemoApplication.debug.xcconfig"
+
+#include "Project.xcconfig"
+
+// Architectures
+ONLY_ACTIVE_ARCH = YES
+
+// Deployment
+COPY_PHASE_STRIP = NO
+
+// Code Generation
+GCC_OPTIMIZATION_LEVEL = 0
+
+// Preprocessor
+GCC_PREPROCESSOR_DEFINITIONS = DEBUG=1 $(inherited)
+
+// Warnings
+GCC_WARN_UNUSED_VARIABLE = NO

@@ -22,6 +22,10 @@
 		BF69E1A62264A3030005BEF1 /* LocationHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A52264A3030005BEF1 /* LocationHandle.swift */; };
 		BF69E1A82265FCD90005BEF1 /* MapWizeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A72265FCD90005BEF1 /* MapWizeController.swift */; };
 		BF69E1AA2265FCF10005BEF1 /* VisioGlobeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A92265FCF10005BEF1 /* VisioGlobeController.swift */; };
+		BF8BCC6122671F2C00E995B6 /* VisioMoveEssential.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF8BCC5F22671F2B00E995B6 /* VisioMoveEssential.bundle */; };
+		BF8BCC6222671F2C00E995B6 /* VisioMoveEssentialStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF8BCC6022671F2B00E995B6 /* VisioMoveEssentialStrings.bundle */; };
+		BFBEC5F1226769CF00C62392 /* VisioMoveEssential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBEC5F0226769CF00C62392 /* VisioMoveEssential.framework */; };
+		BFBEC6072267704300C62392 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBEC5F222676C1800C62392 /* CoreData.framework */; };
 		DECECF9C4C0DA0AAD3CAD503 /* Pods_StellarLbsDemoApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528FEEC4EBE6675C93728FD8 /* Pods_StellarLbsDemoApplicationTests.framework */; };
 		E95272645DBC70505313AA91 /* Pods_StellarLbsDemoApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14235BB84A36676A8BE371B5 /* Pods_StellarLbsDemoApplicationUITests.framework */; };
 /* End PBXBuildFile section */
@@ -61,7 +65,7 @@
 		84C5CE6C2046A969005DD7D0 /* StellarLbsDemoApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarLbsDemoApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C5CE702046A969005DD7D0 /* StellarLbsDemoApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarLbsDemoApplicationTests.swift; sourceTree = "<group>"; };
 		84C5CE722046A969005DD7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84C5CE772046A969005DD7D0 /* StellarLbsDemoApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarLbsDemoApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C5CE772046A969005DD7D0 /* StellarLbsDemoApplicationUITests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarLbsDemoApplicationUITests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C5CE7B2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarLbsDemoApplicationUITests.swift; sourceTree = "<group>"; };
 		84C5CE7D2046A969005DD7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C5CE892046A977005DD7D0 /* StellarLbsDemoApplication-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StellarLbsDemoApplication-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -71,9 +75,36 @@
 		916D782E4617D51A73E9A464 /* Pods_StellarLbsDemoApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StellarLbsDemoApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A1D859398F16869C1DDAFB /* Pods-StellarLbsDemoApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplication/Pods-StellarLbsDemoApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		BC17BC66340B453CB78E9436 /* Pods-StellarLbsDemoApplicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationTests/Pods-StellarLbsDemoApplicationTests.release.xcconfig"; sourceTree = "<group>"; };
+		BF586A78226752A20048E8B7 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		BF586A81226759180048E8B7 /* Tests.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Tests.debug.xcconfig; sourceTree = "<group>"; };
+		BF586A82226759180048E8B7 /* Application.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Application.debug.xcconfig; sourceTree = "<group>"; };
+		BF586A83226759180048E8B7 /* Project-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
+		BF586A84226759180048E8B7 /* Project-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Project-Release.xcconfig"; sourceTree = "<group>"; };
+		BF586A85226759190048E8B7 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		BF586A86226759190048E8B7 /* Application.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Application.release.xcconfig; sourceTree = "<group>"; };
+		BF586A87226759190048E8B7 /* Tests.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Tests.release.xcconfig; sourceTree = "<group>"; };
+		BF586A8F226759FC0048E8B7 /* Application.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
 		BF69E1A52264A3030005BEF1 /* LocationHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandle.swift; sourceTree = "<group>"; };
 		BF69E1A72265FCD90005BEF1 /* MapWizeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWizeController.swift; sourceTree = "<group>"; };
 		BF69E1A92265FCF10005BEF1 /* VisioGlobeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisioGlobeController.swift; sourceTree = "<group>"; };
+		BF8BCC5D22671EE700E995B6 /* VisioMoveEssential.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VisioMoveEssential.framework; sourceTree = "<group>"; };
+		BF8BCC5F22671F2B00E995B6 /* VisioMoveEssential.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = VisioMoveEssential.bundle; sourceTree = "<group>"; };
+		BF8BCC6022671F2B00E995B6 /* VisioMoveEssentialStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = VisioMoveEssentialStrings.bundle; sourceTree = "<group>"; };
+		BFBEC5EE226769C700C62392 /* VisioMoveEssential */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = VisioMoveEssential; path = ../VisioMoveEssential.framework/VisioMoveEssential; sourceTree = "<group>"; };
+		BFBEC5F0226769CF00C62392 /* VisioMoveEssential.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisioMoveEssential.framework; path = ../VisioMoveEssential.framework; sourceTree = "<group>"; };
+		BFBEC5F222676C1800C62392 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BFBEC5F522676D1D00C62392 /* libutil.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libutil.tbd; path = usr/lib/libutil.tbd; sourceTree = SDKROOT; };
+		BFBEC5F722676F1200C62392 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BFBEC5F922676F1E00C62392 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BFBEC5FC22676F8200C62392 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BFBEC5FE22676F8800C62392 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BFBEC60022676F9000C62392 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		BFBEC60222676FCE00C62392 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		BFBEC6042267702B00C62392 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BFBEC608226770F000C62392 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BFBEC60B2267710000C62392 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		BFBEC60E2267710F00C62392 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BFBEC6102267711200C62392 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFBEC6072267704300C62392 /* CoreData.framework in Frameworks */,
+				BFBEC5F1226769CF00C62392 /* VisioMoveEssential.framework in Frameworks */,
 				B28E1473F993E8F6A88AD130 /* Pods_StellarLbsDemoApplication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +140,23 @@
 		035B93774C49E21683CE0C8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFBEC6102267711200C62392 /* CoreLocation.framework */,
+				BFBEC60E2267710F00C62392 /* CoreGraphics.framework */,
+				BFBEC60B2267710000C62392 /* OpenGLES.framework */,
+				BFBEC608226770F000C62392 /* QuartzCore.framework */,
+				BFBEC6042267702B00C62392 /* UIKit.framework */,
+				BFBEC60222676FCE00C62392 /* StoreKit.framework */,
+				BFBEC60022676F9000C62392 /* CoreFoundation.framework */,
+				BFBEC5FE22676F8800C62392 /* Foundation.framework */,
+				BFBEC5FC22676F8200C62392 /* AVFoundation.framework */,
+				BFBEC5F922676F1E00C62392 /* SystemConfiguration.framework */,
+				BFBEC5F722676F1200C62392 /* Security.framework */,
+				BFBEC5F522676D1D00C62392 /* libutil.tbd */,
+				BFBEC5F222676C1800C62392 /* CoreData.framework */,
+				BFBEC5F0226769CF00C62392 /* VisioMoveEssential.framework */,
+				BFBEC5EE226769C700C62392 /* VisioMoveEssential */,
+				BF586A78226752A20048E8B7 /* AVKit.framework */,
+				BF8BCC5D22671EE700E995B6 /* VisioMoveEssential.framework */,
 				916D782E4617D51A73E9A464 /* Pods_StellarLbsDemoApplication.framework */,
 				528FEEC4EBE6675C93728FD8 /* Pods_StellarLbsDemoApplicationTests.framework */,
 				14235BB84A36676A8BE371B5 /* Pods_StellarLbsDemoApplicationUITests.framework */,
@@ -130,6 +180,16 @@
 		84C5CE4F2046A969005DD7D0 = {
 			isa = PBXGroup;
 			children = (
+				BF586A82226759180048E8B7 /* Application.debug.xcconfig */,
+				BF586A86226759190048E8B7 /* Application.release.xcconfig */,
+				BF586A8F226759FC0048E8B7 /* Application.xcconfig */,
+				BF586A83226759180048E8B7 /* Project-Debug.xcconfig */,
+				BF586A84226759180048E8B7 /* Project-Release.xcconfig */,
+				BF586A85226759190048E8B7 /* Project.xcconfig */,
+				BF586A81226759180048E8B7 /* Tests.debug.xcconfig */,
+				BF586A87226759190048E8B7 /* Tests.release.xcconfig */,
+				BF8BCC5F22671F2B00E995B6 /* VisioMoveEssential.bundle */,
+				BF8BCC6022671F2B00E995B6 /* VisioMoveEssentialStrings.bundle */,
 				84C5CE5A2046A969005DD7D0 /* StellarLbsDemoApplication */,
 				84C5CE6F2046A969005DD7D0 /* StellarLbsDemoApplicationTests */,
 				84C5CE7A2046A969005DD7D0 /* StellarLbsDemoApplicationUITests */,
@@ -144,7 +204,7 @@
 			children = (
 				84C5CE582046A969005DD7D0 /* StellarLbsDemoApplication.app */,
 				84C5CE6C2046A969005DD7D0 /* StellarLbsDemoApplicationTests.xctest */,
-				84C5CE772046A969005DD7D0 /* StellarLbsDemoApplicationUITests.xctest */,
+				84C5CE772046A969005DD7D0 /* StellarLbsDemoApplicationUITests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -245,7 +305,7 @@
 			);
 			name = StellarLbsDemoApplicationUITests;
 			productName = StellarLbsDemoApplicationUITests;
-			productReference = 84C5CE772046A969005DD7D0 /* StellarLbsDemoApplicationUITests.xctest */;
+			productReference = 84C5CE772046A969005DD7D0 /* StellarLbsDemoApplicationUITests.app */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -302,6 +362,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF8BCC6122671F2C00E995B6 /* VisioMoveEssential.bundle in Resources */,
+				BF8BCC6222671F2C00E995B6 /* VisioMoveEssentialStrings.bundle in Resources */,
 				84CE3B0320D932A50028D7C3 /* Keys.plist in Resources */,
 				84C5CE662046A969005DD7D0 /* LaunchScreen.storyboard in Resources */,
 				84C5CE632046A969005DD7D0 /* Assets.xcassets in Resources */,
@@ -477,11 +539,12 @@
 /* Begin XCBuildConfiguration section */
 		84C5CE7E2046A969005DD7D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF586A8F226759FC0048E8B7 /* Application.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -508,11 +571,14 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -528,6 +594,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -536,11 +603,12 @@
 		};
 		84C5CE7F2046A969005DD7D0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF586A8F226759FC0048E8B7 /* Application.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -567,10 +635,13 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -580,6 +651,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -588,14 +661,43 @@
 		};
 		84C5CE812046A969005DD7D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9A1D859398F16869C1DDAFB /* Pods-StellarLbsDemoApplication.debug.xcconfig */;
+			baseConfigurationReference = BF586A83226759180048E8B7 /* Project-Debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5B8GR28KJ6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = StellarLbsDemoApplication/Info.plist;
+				KEEP_PRIVATE_EXTERNS = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+					"-l\"NAOSDK\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"MapwizeForMapbox\"",
+					"-framework",
+					"\"IndoorLocation\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"CoreBluetooth\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"Mapbox\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = StellarLbsDemoApplication.PersoVincent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "StellarLbsDemoApplication/StellarLbsDemoApplication-Bridging-Header.h";
@@ -607,14 +709,43 @@
 		};
 		84C5CE822046A969005DD7D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1458D6295767A5C714450626 /* Pods-StellarLbsDemoApplication.release.xcconfig */;
+			baseConfigurationReference = BF586A84226759180048E8B7 /* Project-Release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5B8GR28KJ6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = StellarLbsDemoApplication/Info.plist;
+				KEEP_PRIVATE_EXTERNS = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+					"-l\"NAOSDK\"",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"MapwizeForMapbox\"",
+					"-framework",
+					"\"IndoorLocation\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"CoreBluetooth\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"Mapbox\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = StellarLbsDemoApplication.PersoVincent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "StellarLbsDemoApplication/StellarLbsDemoApplication-Bridging-Header.h";
@@ -625,11 +756,15 @@
 		};
 		84C5CE842046A969005DD7D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FC9E6DBE44491615D7ACD5A /* Pods-StellarLbsDemoApplicationTests.debug.xcconfig */;
+			baseConfigurationReference = BF586A81226759180048E8B7 /* Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = StellarLbsDemoApplicationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ale.StellarLbsDemoApplicationTests;
@@ -642,11 +777,15 @@
 		};
 		84C5CE852046A969005DD7D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC17BC66340B453CB78E9436 /* Pods-StellarLbsDemoApplicationTests.release.xcconfig */;
+			baseConfigurationReference = BF586A87226759190048E8B7 /* Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = StellarLbsDemoApplicationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ale.StellarLbsDemoApplicationTests;
@@ -663,6 +802,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = StellarLbsDemoApplicationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ale.StellarLbsDemoApplicationUITests;
@@ -679,6 +822,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = StellarLbsDemoApplicationUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ale.StellarLbsDemoApplicationUITests;

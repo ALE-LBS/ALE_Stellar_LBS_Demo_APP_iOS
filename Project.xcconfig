@@ -1,0 +1,69 @@
+// Copyright (c) Visioglobe SAS. All rights reserved.
+//
+// This file is subject to the terms and conditions defined in
+// file 'LICENSE.txt', which is part of this source code package.
+
+#include "Application.xcconfig"
+
+// Architectures
+
+ARCHS = i386 armv7 x86_64 arm64
+IPHONEOS_DEPLOYMENT_TARGET = 11.2
+SDKROOT = iphoneos
+
+// <VisioMoveEssential>
+// Enable modules
+CLANG_ENABLE_MODULES = YES
+// Do not strip png
+STRIP_PNG_TEXT = NO
+// Compressed PNG's aren't read by the VisioMoveEssential.
+COMPRESS_PNG_FILES = NO
+//Disable bitcode, because not supported by VisioMove
+ENABLE_BITCODE = NO
+// Added the ObjC linker flag.  This flag ensures all members of VisioMoveEssential,
+// that implement any Objective-C classes or categories, are loaded.
+OTHER_LDFLAGS = -ObjC
+// </VisioMoveEssential>
+
+// Deployment
+TARGETED_DEVICE_FAMILY = 1,2 // iPhone, iPad
+
+// Packaging
+PRODUCT_NAME = $(TARGET_NAME)
+INFOPLIST_FILE = $(PROJECT_NAME)/Info.plist
+
+// Search Paths
+ALWAYS_SEARCH_USER_PATHS = NO
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$(SRCROOT)/" "$(SRCROOT)/../../"
+
+// Code Generation
+DEAD_CODE_STRIPPING = NO
+
+// Language
+CLANG_ENABLE_OBJC_ARC = YES
+CLANG_CXX_LANGUAGE_STANDARD = c++98
+CLANG_CXX_LIBRARY = libc++
+GCC_C_LANGUAGE_STANDARD = c99
+GCC_ENABLE_CPP_RTTI = NO
+
+// Warnings
+CLANG_WARN__DUPLICATE_METHOD_MATCH = YES
+CLANG_WARN_BOOL_CONVERSION = YES
+CLANG_WARN_CONSTANT_CONVERSION = YES
+CLANG_WARN_CXX0X_EXTENSIONS = NO
+CLANG_WARN_EMPTY_BODY = YES
+CLANG_WARN_ENUM_CONVERSION = YES
+CLANG_WARN_INT_CONVERSION = YES
+CLANG_WARN_UNREACHABLE_CODE = YES
+GCC_TREAT_WARNINGS_AS_ERRORS = YES
+GCC_WARN_64_TO_32_BIT_CONVERSION = YES
+GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES
+GCC_WARN_ABOUT_RETURN_TYPE = YES
+GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES
+GCC_WARN_MISSING_PARENTHESES = YES
+GCC_WARN_SHADOW = YES
+GCC_WARN_UNDECLARED_SELECTOR = YES
+GCC_WARN_UNINITIALIZED_AUTOS = YES
+GCC_WARN_UNUSED_FUNCTION = YES
+GCC_WARN_UNUSED_VARIABLE = YES
+ENABLE_STRICT_OBJC_MSGSEND = YES
