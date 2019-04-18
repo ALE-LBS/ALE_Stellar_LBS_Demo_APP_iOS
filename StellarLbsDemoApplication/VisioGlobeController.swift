@@ -13,9 +13,23 @@ class VisioGlobeController: UIViewController {
 
     @IBOutlet weak var mapView: VMEMapView!
     var searchViewCallback: VMESearchViewCallback = VisioGlobeSearchViewCallback.init()
+    var mapHash:String?
+    
+    func setMapHash(_ mapHash: String){
+        self.mapHash=mapHash
+    }
+    
+    func reload(mapHash:String){
+        if(mapView != nil){
+            mapView.unloadMap()
+            self.setMapHash(mapHash)
+            mapView.setMapHash(mapHash)
+            mapView.loadMap()
+        }
+    }//TODO Rethink (find a way to set maphash at launch)
     
     override func viewDidLoad() {
-        mapView.setMapHash("m940afbf14e55c904955df9d0b64218238b0e749d")
+        mapView.setMapHash(mapHash)
         mapView.loadMap()
         mapView.showSearchView(withTitle: "Search", callback: searchViewCallback)
     }

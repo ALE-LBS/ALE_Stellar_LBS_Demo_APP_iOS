@@ -85,6 +85,20 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate{
     }
 
     private func setView(asChildViewController viewController:UIViewController, mapSelected:Map){
+        switch mapSelected{
+        case .BrestVisio:
+            visioGlobeController.reload(mapHash: "m940afbf14e55c904955df9d0b64218238b0e749d")
+        case .Colombes:
+            visioGlobeController.reload(mapHash: "mb5cdba08b03f74907aef5eb16a56fec41a35435c")
+        case .MapWize:
+            NSLog("Mapwize")
+        case .Transportation:
+            visioGlobeController.reload(mapHash: "mf9e95e83efab408fcd749aff3ddceb20e43c37cc")
+        case .Hospitality:
+            visioGlobeController.reload(mapHash: "mfb77589730a6f9b8d4b098b012189b2c84e2f83a")
+        case .Healthcare:
+            visioGlobeController.reload(mapHash: "m3d398a4c9b3c83e5faac2dd980d8749bf7b262e2")
+        }
         locationHandle?.setMapSelected(mapSelected)
         removeAll()
         add(asChildViewController: viewController)
@@ -94,6 +108,8 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate{
         let message = UIAlertController(title: "Select Map", message: "Select your map", preferredStyle: .actionSheet)
         message.addAction(UIAlertAction(title:"Brest VisioGlobe", style: .default, handler: {(action:UIAlertAction!) -> Void in
             self.setView(asChildViewController: self.visioGlobeController, mapSelected: Map.BrestVisio)}))
+        message.addAction(UIAlertAction(title:"Colombes VisioGlobe", style: .default, handler: {(action:UIAlertAction!) -> Void in
+            self.setView(asChildViewController: self.visioGlobeController, mapSelected: Map.Colombes)}))
         message.addAction(UIAlertAction(title: "Brest Mapwize", style: .default, handler: {(action:UIAlertAction!) -> Void in
             self.setView(asChildViewController: self.mapWizeController, mapSelected: Map.MapWize)}))
         OperationQueue.main.addOperation {
