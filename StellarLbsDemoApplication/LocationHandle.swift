@@ -25,6 +25,21 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
         geofencingHandle!.synchronizeData(self)
     }
     
+    func restartLocation(key:String){
+        
+        locationHandle?.stop()
+        geofencingHandle?.stop()
+        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(delayedAction(_:)), userInfo: key, repeats: false)
+    }
+    
+    @objc func delayedAction(_ timer: Timer){
+        let key = timer.userInfo as! String
+        locationHandle = NAOLocationHandle.init(key: key, delegate: self, sensorsDelegate: self)
+        geofencingHandle = NAOGeofencingHandle.init(key: key, delegate: self, sensorsDelegate: self)
+        locationHandle?.synchronizeData(self)
+        geofencingHandle?.synchronizeData(self)
+    }
+    
     func setMapSelected(mapSelected:Map){
         self.mapSelected = mapSelected
     }
