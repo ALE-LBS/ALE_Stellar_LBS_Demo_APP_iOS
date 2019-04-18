@@ -11,6 +11,7 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
     var locationHandle : NAOLocationHandle?
     var geofencingHandle : NAOGeofencingHandle?
     var masterViewController: MasterViewController?
+    var mapSelected:Map?
     
     init(masterViewController:MasterViewController?) {
         super.init()
@@ -22,6 +23,10 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
         geofencingHandle = NAOGeofencingHandle.init(key: key, delegate: self, sensorsDelegate: self)
         locationHandle!.synchronizeData(self)
         geofencingHandle!.synchronizeData(self)
+    }
+    
+    func setMapSelected(mapSelected:Map){
+        self.mapSelected = mapSelected
     }
     
     //NAOSyncDelegate
@@ -91,7 +96,11 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
         NSLog("didLocationChange")
         NSLog("latitude: " + location.coordinate.latitude.description)
         NSLog("longitude: " + location.coordinate.longitude.description)
-        masterViewController?.mapWizeController.setUserPosition(location.coordinate)
+        if(mapSelected == Map.MapWize){
+            masterViewController?.mapWizeController.setUserPosition(location.coordinate)
+        }else{
+            masterViewController?.visioGlobeController.setUserPosition(location)
+        }
         
     }
     
@@ -126,4 +135,13 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
     func requiresCompassCalibration() {
         masterViewController!.displayMessage(title: "Compass Calibration Required", message: "Youu need to recalibrate the compass")
     }
+}
+
+enum Map{
+    case MapWize
+    case BrestVisio
+    case Colombes
+    case Transportation
+    case Hospitality
+    case Healthcare
 }

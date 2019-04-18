@@ -90,9 +90,11 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate{
     
     private func updateView(){
         if segmentedControl.selectedSegmentIndex == 0 {
+            locationHandle?.setMapSelected(mapSelected: Map.MapWize)
             remove(asChildViewController: visioGlobeController)
             add(asChildViewController: mapWizeController)
         }else{
+            locationHandle?.setMapSelected(mapSelected: Map.BrestVisio)
             remove(asChildViewController: mapWizeController)
             add(asChildViewController: visioGlobeController)
         }

@@ -73,16 +73,26 @@
         <scene sceneID="pBm-Qo-pgC">
             <objects>
                 <viewController storyboardIdentifier="VisioGlobeController" id="jnt-gx-JDG" customClass="VisioGlobeController" customModule="StellarLbsDemoApplication" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1Kh-dg-Kyn">
+                    <view key="view" contentMode="scaleToFill" id="5TZ-mf-sbl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="JZI-pR-OJf"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nYY-Ve-u3z" customClass="VMEMapView">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="FhE-zd-BdF"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="nYY-Ve-u3z" id="iR8-To-vXL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9D-Qv-dxu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16" y="-602"/>
+            <point key="canvasLocation" x="15.942028985507248" y="-602.44565217391312"/>
         </scene>
     </scenes>
 </document>
