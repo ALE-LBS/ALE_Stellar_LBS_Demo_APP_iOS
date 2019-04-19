@@ -20,13 +20,13 @@ class VisioGlobeController: UIViewController {
     }
     
     func reload(mapHash:String){
+        self.setMapHash(mapHash)
         if(mapView != nil){
             mapView.unloadMap()
-            self.setMapHash(mapHash)
             mapView.setMapHash(mapHash)
             mapView.loadMap()
         }
-    }//TODO Rethink (find a way to set maphash at launch)
+    }
     
     override func viewDidLoad() {
         mapView.setMapHash(mapHash)
