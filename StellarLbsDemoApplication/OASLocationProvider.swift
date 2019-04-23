@@ -23,11 +23,13 @@ class OASLocationProvider: ILIndoorLocationProvider {
     }
     
     override func start(){
+        NSLog("Location Provider Start")
         self.dispatchDidStart()
         self.isDispatchStarted = true
     }
     
     override func stop(){
+        NSLog("Location Provider Stop")
         self.dispatchDidStop()
         self.isDispatchStarted = false
     }

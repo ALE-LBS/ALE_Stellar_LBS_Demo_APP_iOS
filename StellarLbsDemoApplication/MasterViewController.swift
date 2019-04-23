@@ -18,19 +18,20 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         askPermissions()
-        setupView()
+        setupView() //TODO map selection closes permissions ask
         locationHandle = LocationHandle.init(masterViewController: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let OASKey = readPList(key: "OAS-Brest")
-        if  OASKey != "Error"{
-            locationHandle?.initLocation(key: OASKey)
-        }
-        else{
-            //ERROR, no key found
-        }
+//******************** Bug **********************
+//        let OASKey = readPList(key: "OAS-Brest")
+//        if  OASKey != "Error"{
+//            locationHandle?.initLocation(key: OASKey)
+//        }
+//        else{
+//            //ERROR, no key found
+//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,35 +84,45 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate{
             self.remove(asChildViewController: child)
         }
     }
-
+    
     private func setView(asChildViewController viewController:UIViewController, mapSelected:Map){
         switch mapSelected{
         case .BrestVisio:
-            visioGlobeController.reload(mapHash: "m940afbf14e55c904955df9d0b64218238b0e749d")
-        case .Colombes:
-            visioGlobeController.reload(mapHash: "mb5cdba08b03f74907aef5eb16a56fec41a35435c")
-        case .MapWize:
-            NSLog("Mapwize")
+            visioGlobeController.changeMap(mapHash: "m940afbf14e55c904955df9d0b64218238b0e749d")
+        case .ColombesVisio:
+            visioGlobeController.changeMap(mapHash: "mb5cdba08b03f74907aef5eb16a56fec41a35435c")
+        case .ColombesMapWize:
+            mapWizeController.changeMap(coordinates: CLLocationCoordinate2D(latitude: 48.933940, longitude: 2.253306))
+        case .BrestMapWize:
+            mapWizeController.changeMap(coordinates: CLLocationCoordinate2D(latitude: 48.441637506411176, longitude: -4.4127606743614365))
         case .Transportation:
-            visioGlobeController.reload(mapHash: "mf9e95e83efab408fcd749aff3ddceb20e43c37cc")
+            visioGlobeController.changeMap(mapHash: "mf9e95e83efab408fcd749aff3ddceb20e43c37cc")
         case .Hospitality:
-            visioGlobeController.reload(mapHash: "mfb77589730a6f9b8d4b098b012189b2c84e2f83a")
+            visioGlobeController.changeMap(mapHash: "mfb77589730a6f9b8d4b098b012189b2c84e2f83a")
         case .Healthcare:
-            visioGlobeController.reload(mapHash: "m3d398a4c9b3c83e5faac2dd980d8749bf7b262e2")
+            visioGlobeController.changeMap(mapHash: "m3d398a4c9b3c83e5faac2dd980d8749bf7b262e2")
         }
         locationHandle?.setMapSelected(mapSelected)
         removeAll()
         add(asChildViewController: viewController)
     }
-
-    @IBAction func selectMap(_ sender: Any?) {
+    
+    @IBAction func displayMapSelection(_ sender: Any?) {
         let message = UIAlertController(title: "Select Map", message: "Select your map", preferredStyle: .actionSheet)
         message.addAction(UIAlertAction(title:"Brest VisioGlobe", style: .default, handler: {(action:UIAlertAction!) -> Void in
             self.setView(asChildViewController: self.visioGlobeController, mapSelected: Map.BrestVisio)}))
         message.addAction(UIAlertAction(title:"Colombes VisioGlobe", style: .default, handler: {(action:UIAlertAction!) -> Void in
-            self.setView(asChildViewController: self.visioGlobeController, mapSelected: Map.Colombes)}))
+            self.setView(asChildViewController: self.visioGlobeController, mapSelected: Map.ColombesVisio)}))
+        message.addAction(UIAlertAction(title:"Transportation VisioGlobe", style: .default, handler: {(action:UIAlertAction!) -> Void in
+            self.setView(asChildViewController: self.visioGlobeController, mapSelected: Map.Transportation)}))
+        message.addAction(UIAlertAction(title:"Hospitality VisioGlobe", style: .default, handler: {(action:UIAlertAction!) -> Void in
+            self.setView(asChildViewController: self.visioGlobeController, mapSelected: Map.Hospitality)}))
+        message.addAction(UIAlertAction(title:"Healthcare VisioGlobe", style: .default, handler: {(action:UIAlertAction!) -> Void in
+            self.setView(asChildViewController: self.visioGlobeController, mapSelected: Map.Healthcare)}))
         message.addAction(UIAlertAction(title: "Brest Mapwize", style: .default, handler: {(action:UIAlertAction!) -> Void in
-            self.setView(asChildViewController: self.mapWizeController, mapSelected: Map.MapWize)}))
+            self.setView(asChildViewController: self.mapWizeController, mapSelected: Map.BrestMapWize)}))
+        message.addAction(UIAlertAction(title: "Colombes Mapwize", style: .default, handler: {(action:UIAlertAction!) -> Void in
+            self.setView(asChildViewController: self.mapWizeController, mapSelected: Map.ColombesMapWize)}))
         OperationQueue.main.addOperation {
             self.present(message,animated: true, completion: nil)
         }
@@ -124,7 +135,7 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate{
     
     private func setupView(){
         setupInitialView()
-        selectMap(nil)
+        displayMapSelection(nil)
     }
     
     //***********************************************************

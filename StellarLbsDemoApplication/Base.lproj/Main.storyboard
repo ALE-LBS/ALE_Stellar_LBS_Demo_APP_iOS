@@ -53,7 +53,7 @@
                     <navigationItem key="navigationItem" title="ALE LBS Demo" id="2lS-OB-5Jk">
                         <barButtonItem key="rightBarButtonItem" title="Map" id="HMa-NW-DBh">
                             <connections>
-                                <action selector="selectMap:" destination="cL6-JV-RKS" id="zMq-M7-7Yu"/>
+                                <action selector="displayMapSelection:" destination="cL6-JV-RKS" id="cdD-2y-Cvg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -71,11 +71,11 @@
                 <viewController storyboardIdentifier="VisioGlobeController" id="jnt-gx-JDG" customClass="VisioGlobeController" customModule="StellarLbsDemoApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5TZ-mf-sbl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nYY-Ve-u3z" customClass="VMEMapView">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nYY-Ve-u3z" customClass="VMEMapView">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -98,7 +98,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OAS_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="fdF-cJ-ss5">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OAS_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="TFa-Fw-bpp">
                                 <rect key="frame" x="87" y="304" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>

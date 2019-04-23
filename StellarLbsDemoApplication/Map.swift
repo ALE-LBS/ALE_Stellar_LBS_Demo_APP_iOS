@@ -9,9 +9,10 @@
 import Foundation
 
 enum Map{
-    case MapWize
+    case BrestMapWize
     case BrestVisio
-    case Colombes
+    case ColombesMapWize
+    case ColombesVisio
     case Transportation
     case Hospitality
     case Healthcare

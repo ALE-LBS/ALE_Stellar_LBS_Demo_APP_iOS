@@ -19,16 +19,18 @@ class VisioGlobeController: UIViewController {
         self.mapHash=mapHash
     }
     
-    func reload(mapHash:String){
+    func changeMap(mapHash:String){
         self.setMapHash(mapHash)
+        NSLog("VisioGlobe ChangeMap")
         if(mapView != nil){
             mapView.unloadMap()
             mapView.setMapHash(mapHash)
             mapView.loadMap()
-        }
+        }//else: 1st display -> ViewDidLoad
     }
     
     override func viewDidLoad() {
+        NSLog("VisioGlobe ViewDidLoad")
         mapView.setMapHash(mapHash)
         mapView.loadMap()
         mapView.showSearchView(withTitle: "Search", callback: searchViewCallback)

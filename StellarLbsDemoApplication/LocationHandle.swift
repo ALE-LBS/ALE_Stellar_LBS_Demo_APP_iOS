@@ -111,7 +111,7 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
         NSLog("didLocationChange")
         NSLog("latitude: " + location.coordinate.latitude.description)
         NSLog("longitude: " + location.coordinate.longitude.description)
-        if(mapSelected == Map.MapWize){
+        if(mapSelected == Map.BrestMapWize){
             masterViewController?.mapWizeController.setUserPosition(location.coordinate)
         }else{
             masterViewController?.visioGlobeController.setUserPosition(location)
