@@ -19,14 +19,7 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
     }
     
     func initLocation(key:String){
-        locationHandle = NAOLocationHandle.init(key: key, delegate: self, sensorsDelegate: self)
-        geofencingHandle = NAOGeofencingHandle.init(key: key, delegate: self, sensorsDelegate: self)
-        locationHandle!.synchronizeData(self)
-        geofencingHandle!.synchronizeData(self)
-    }
-    
-    func restartLocation(key:String){
-        
+        NSLog("initLocation key: " + key)
         locationHandle?.stop()
         geofencingHandle?.stop()
         Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(delayedAction(_:)), userInfo: key, repeats: false)

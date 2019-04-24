@@ -60,7 +60,7 @@
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>OmniAccess Stellar LBS SDK will have access to your location information when using the application</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>OmniAccess Stellar LBS SDK will have access to your location information when using the application</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
