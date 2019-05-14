@@ -16,8 +16,8 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
     var locationProvider:OASLocationProvider = OASLocationProvider.init()
     var isLocationProviderSet:Bool=false
     var mglMapView:MGLMapView?
-    
     var selectedCoordinates:CLLocationCoordinate2D?
+    var lastPlace:MWZPlace? = nil
     
     func changeMap(coordinates:CLLocationCoordinate2D){
         selectedCoordinates=coordinates
@@ -38,14 +38,55 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
         mapwizePlugin.mapboxDelegate = self
     }
     
+    func plugin(_ plugin: MapwizePlugin!, didTap clickEvent: MWZClickEvent!) {
+        NSLog("didTap")
+        switch clickEvent.eventType {
+        case MAP_CLICK:
+            NSLog("Map Click")
+        case PLACE_CLICK:
+            NSLog("Place Click")
+            mapwizePlugin.removeMarkers()
+            mapwizePlugin.addMarker(coreLocationToMapwize(clickEvent.place.center()))
+            let button = createButton(text: "Go", x: 10, y: Int(view.bounds.maxY-80), width: 50, height: 50)
+            lastPlace = clickEvent.place
+            button.addTarget(self, action: #selector(getDirection), for: .touchUpInside)
+            mglMapView?.addSubview(button)
+        case VENUE_CLICK:
+            NSLog("Venue Click")
+        default:
+            NSLog("")
+        }
+        
+    }
+    
+    @objc func getDirection(){
+        //Can't access the API (idk why)
+        MWZApi.getAccess("98d7bc53090ecc4da62e09269332fe5b", success: {
+            NSLog("API Success")
+            MWZApi.getDirectionWith(from: self.locationProvider.getLastUserPositionMWZ(), to: self.coreLocationToMapwize(self.lastPlace!.center()) , isAccessible: false, success:
+                { (direction) in
+                    NSLog("direction: "+direction!.description)
+            }) { (error) in
+                NSLog("error " + error!.localizedDescription)
+            }
+        }) { (err) in
+            NSLog("API Failure")
+        }
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Location Provider
         locationProvider.start()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
+    
+    
     
     //Tell Indoor Location Provider to update the location on the map
     func setUserPosition(_ coordinates: CLLocationCoordinate2D){
@@ -57,5 +98,25 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
             let indoorLocation = ILIndoorLocation.init(provider: locationProvider, latitude: coordinates.latitude, longitude: coordinates.longitude, floor: 0)!
             locationProvider.setLocation(indoorLocation: indoorLocation)
         }
+    }
+    
+    func coreLocationToMapwize(_ location:CLLocationCoordinate2D) -> MWZLatLngFloor{
+        return MWZLatLngFloor.init(latitude: location.latitude, longitude: location.longitude)
+    }
+    
+    func createButton(text:String, x:Int, y:Int, width:Int, height:Int) -> UIButton{
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(x: x, y: y, width: width, height: height)
+        button.layer.cornerRadius = 0.5 * button.bounds.size.width
+        button.autoresizingMask = [.flexibleLeftMargin, .flexibleBottomMargin]
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.backgroundColor = .white
+        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
+        button.layer.shadowOffset = CGSize(width: 0, height: 3)
+        button.layer.shadowOpacity = 1.0
+        button.layer.shadowRadius = 10.0
+        button.layer.masksToBounds = false
+        button.setTitle(text, for: .normal)
+        return button
     }
 }

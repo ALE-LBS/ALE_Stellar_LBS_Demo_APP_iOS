@@ -14,8 +14,6 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
     var locationHandle:LocationHandle? = nil
     var locationManager:CLLocationManager = CLLocationManager.init()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
@@ -50,6 +48,7 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
     lazy var initialViewController: InitialViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "InitialViewController") as! InitialViewController
+        viewController.setNavigationButton(navigationButton)
         self.add(asChildViewController:viewController)
         return viewController
     }()
@@ -75,10 +74,16 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
     }
     
     private func changeMap(asChildViewController viewController:UIViewController, mapSelected:Map){
+        if(locationHandle == nil){
+            locationHandle = LocationHandle.init(masterViewController:self)
+        }
         switch mapSelected{
+        case .Emulator:
+            locationHandle?.initLocation(key: "emulator")
+            visioGlobeController.changeMap(mapHash: "mb5cdba08b03f74907aef5eb16a56fec41a35435c")
         case .BrestVisio:
-            visioGlobeController.changeMap(mapHash: "m940afbf14e55c904955df9d0b64218238b0e749d")
             locationHandle?.initLocation(key: readPList(key: "OAS-Brest"))
+            visioGlobeController.changeMap(mapHash: "m940afbf14e55c904955df9d0b64218238b0e749d")
         case .ColombesVisio:
             locationHandle?.initLocation(key: readPList(key: "OAS-Colombes"))
             visioGlobeController.changeMap(mapHash: "mb5cdba08b03f74907aef5eb16a56fec41a35435c")
@@ -105,6 +110,8 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
     
     @IBAction func displayMapSelection(_ sender: Any?){
         let message = UIAlertController(title: "Select Map", message: "Select your map", preferredStyle: .actionSheet)
+        message.addAction(UIAlertAction(title:"Emulation", style: .default, handler: {(action:UIAlertAction!) -> Void in
+            self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.Emulator)}))
         message.addAction(UIAlertAction(title:"Brest VisioGlobe", style: .default, handler: {(action:UIAlertAction!) -> Void in
             self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.BrestVisio)}))
         message.addAction(UIAlertAction(title:"Colombes VisioGlobe", style: .default, handler: {(action:UIAlertAction!) -> Void in

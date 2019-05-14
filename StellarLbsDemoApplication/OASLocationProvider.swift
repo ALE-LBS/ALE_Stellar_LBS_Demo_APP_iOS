@@ -13,6 +13,7 @@ import MapwizeForMapbox
 class OASLocationProvider: ILIndoorLocationProvider {
     
     var isDispatchStarted:Bool = false
+    let lastUserPosition:ILIndoorLocation? = nil
     
     override init!() {
         //self.addDelegate(self)
@@ -20,6 +21,10 @@ class OASLocationProvider: ILIndoorLocationProvider {
     
     func supportFloor() -> Bool{
         return false
+    }
+    
+    func getLastUserPositionMWZ() -> MWZLatLngFloor{
+        return MWZLatLngFloor.init(latitude: lastUserPosition?.latitude ?? 0, longitude: lastUserPosition?.longitude ?? 0)
     }
     
     override func start(){

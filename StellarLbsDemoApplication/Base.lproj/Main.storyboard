@@ -51,7 +51,7 @@
                         <viewLayoutGuide key="safeArea" id="pkz-Q1-oE3"/>
                     </view>
                     <navigationItem key="navigationItem" title="ALE LBS Demo" id="2lS-OB-5Jk">
-                        <barButtonItem key="rightBarButtonItem" title="Map" id="HMa-NW-DBh">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Map" id="HMa-NW-DBh">
                             <connections>
                                 <action selector="displayMapSelection:" destination="cL6-JV-RKS" id="cdD-2y-Cvg"/>
                             </connections>
@@ -102,14 +102,42 @@
                                 <rect key="frame" x="87" y="304" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rNJ-sQ-c7P">
+                                <rect key="frame" x="87" y="102" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZCq-VQ-VyO">
+                                <rect key="frame" x="87" y="140" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Password"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Zn-DU-448">
+                                <rect key="frame" x="178" y="178" width="59" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Connect"/>
+                                <connections>
+                                    <action selector="connect" destination="V1r-Vq-7V7" eventType="touchUpInside" id="Jmq-r3-M3m"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xpb-fv-j4W"/>
                     </view>
+                    <connections>
+                        <outlet property="connectButton" destination="3Zn-DU-448" id="Cfj-OX-YkF"/>
+                        <outlet property="loginField" destination="rNJ-sQ-c7P" id="xXC-HW-YKC"/>
+                        <outlet property="passwordField" destination="ZCq-VQ-VyO" id="pn5-qe-A3f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyS-LJ-kfc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1135" y="-602"/>
+            <point key="canvasLocation" x="1134.7826086956522" y="-602.44565217391312"/>
         </scene>
     </scenes>
     <resources>
