@@ -39,6 +39,8 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
     
     //NAOSyncDelegate
     func didSynchronizationSuccess() {
+        NSLog("didSynchronizationSuccess")
+        masterViewController?.deleteEmulationFile()
         locationHandle!.start()
         geofencingHandle!.start()
     }
@@ -104,11 +106,20 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
         NSLog("didLocationChange")
         NSLog("latitude: " + location.coordinate.latitude.description)
         NSLog("longitude: " + location.coordinate.longitude.description)
-        if(mapSelected == Map.BrestMapWize){
-            masterViewController?.mapWizeController.setUserPosition(location.coordinate)
+        NSLog("altitude: " + location.altitude.description)
+        guard masterViewController != nil else{
+            return
+        }
+        if(mapSelected == Map.ColombesMapWize){
+            if(location.altitude.binade > 1){
+                masterViewController?.mapWizeController.setUserPosition(location.coordinate, floor: 1)
+            }else{
+                masterViewController?.mapWizeController.setUserPosition(location.coordinate, floor: 0)
+            }
         }else{
             masterViewController?.visioGlobeController.setUserPosition(location)
         }
+        PeopleTracker.recordLocation(siteId: masterViewController!.siteID, user: masterViewController!.username, lon: location.coordinate.longitude.description, lat: location.coordinate.latitude.description, alt: String(0))
         
     }
     

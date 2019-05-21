@@ -13,6 +13,10 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
     @IBOutlet weak var navigationButton: UIBarButtonItem!
     var locationHandle:LocationHandle? = nil
     var locationManager:CLLocationManager = CLLocationManager.init()
+    var OASKey: String!
+    //var siteId: String!
+    var siteID: String = "151"
+    var username: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +52,7 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
     lazy var initialViewController: InitialViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "InitialViewController") as! InitialViewController
-        viewController.setNavigationButton(navigationButton)
+        viewController.masterViewController = self
         self.add(asChildViewController:viewController)
         return viewController
     }()
@@ -77,31 +81,22 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
         if(locationHandle == nil){
             locationHandle = LocationHandle.init(masterViewController:self)
         }
+        guard OASKey != nil else{
+            errorQuitApp(title: "Not Connected", message: "Can't retrieve the API Key, the app will quit")
+            return
+        }
+        locationHandle?.initLocation(key: OASKey)
         switch mapSelected{
-        case .Emulator:
-            locationHandle?.initLocation(key: "emulator")
-            visioGlobeController.changeMap(mapHash: "mb5cdba08b03f74907aef5eb16a56fec41a35435c")
-        case .BrestVisio:
-            locationHandle?.initLocation(key: readPList(key: "OAS-Brest"))
-            visioGlobeController.changeMap(mapHash: "m940afbf14e55c904955df9d0b64218238b0e749d")
-        case .ColombesVisio:
-            locationHandle?.initLocation(key: readPList(key: "OAS-Colombes"))
-            visioGlobeController.changeMap(mapHash: "mb5cdba08b03f74907aef5eb16a56fec41a35435c")
-        case .ColombesMapWize:
-            locationHandle?.initLocation(key: readPList(key: "OAS-Colombes"))
-            mapWizeController.changeMap(coordinates: CLLocationCoordinate2D(latitude: 48.933940, longitude: 2.253306))
-        case .BrestMapWize:
-            locationHandle?.initLocation(key: readPList(key: "OAS-Brest"))
-            mapWizeController.changeMap(coordinates: CLLocationCoordinate2D(latitude: 48.441637506411176, longitude: -4.4127606743614365))
-        case .Transportation:
-            locationHandle?.initLocation(key: readPList(key: "OAS-Colombes"))
-            visioGlobeController.changeMap(mapHash: "mf9e95e83efab408fcd749aff3ddceb20e43c37cc")
-        case .Hospitality:
-            locationHandle?.initLocation(key: readPList(key: "OAS-Colombes"))
-            visioGlobeController.changeMap(mapHash: "mfb77589730a6f9b8d4b098b012189b2c84e2f83a")
-        case .Healthcare:
-            locationHandle?.initLocation(key: readPList(key: "OAS-Colombes"))
-            visioGlobeController.changeMap(mapHash: "m3d398a4c9b3c83e5faac2dd980d8749bf7b262e2")
+            case .ColombesVisio:
+                visioGlobeController.changeMap(mapHash: "mb5cdba08b03f74907aef5eb16a56fec41a35435c")
+            case .ColombesMapWize:
+                mapWizeController.changeMap(coordinates: CLLocationCoordinate2D(latitude: 48.933940, longitude: 2.253306))
+            case .Transportation:
+                visioGlobeController.changeMap(mapHash: "mf9e95e83efab408fcd749aff3ddceb20e43c37cc")
+            case .Hospitality:
+                visioGlobeController.changeMap(mapHash: "mfb77589730a6f9b8d4b098b012189b2c84e2f83a")
+            case .Healthcare:
+                visioGlobeController.changeMap(mapHash: "m3d398a4c9b3c83e5faac2dd980d8749bf7b262e2")
         }
         locationHandle?.setMapSelected(mapSelected)
         removeAll()
@@ -110,21 +105,15 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
     
     @IBAction func displayMapSelection(_ sender: Any?){
         let message = UIAlertController(title: "Select Map", message: "Select your map", preferredStyle: .actionSheet)
-        message.addAction(UIAlertAction(title:"Emulation", style: .default, handler: {(action:UIAlertAction!) -> Void in
-            self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.Emulator)}))
-        message.addAction(UIAlertAction(title:"Brest VisioGlobe", style: .default, handler: {(action:UIAlertAction!) -> Void in
-            self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.BrestVisio)}))
-        message.addAction(UIAlertAction(title:"Colombes VisioGlobe", style: .default, handler: {(action:UIAlertAction!) -> Void in
-            self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.ColombesVisio)}))
-        message.addAction(UIAlertAction(title:"Transportation VisioGlobe", style: .default, handler: {(action:UIAlertAction!) -> Void in
+        message.addAction(UIAlertAction(title:"Transportation", style: .default, handler: {(action:UIAlertAction!) -> Void in
             self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.Transportation)}))
-        message.addAction(UIAlertAction(title:"Hospitality VisioGlobe", style: .default, handler: {(action:UIAlertAction!) -> Void in
+        message.addAction(UIAlertAction(title:"Hospitality", style: .default, handler: {(action:UIAlertAction!) -> Void in
             self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.Hospitality)}))
-        message.addAction(UIAlertAction(title:"Healthcare VisioGlobe", style: .default, handler: {(action:UIAlertAction!) -> Void in
+        message.addAction(UIAlertAction(title:"Healthcare", style: .default, handler: {(action:UIAlertAction!) -> Void in
             self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.Healthcare)}))
-        message.addAction(UIAlertAction(title: "Brest Mapwize", style: .default, handler: {(action:UIAlertAction!) -> Void in
-            self.changeMap(asChildViewController: self.mapWizeController, mapSelected: Map.BrestMapWize)}))
-        message.addAction(UIAlertAction(title: "Colombes Mapwize", style: .default, handler: {(action:UIAlertAction!) -> Void in
+        message.addAction(UIAlertAction(title:"EBC Colombes 3D", style: .default, handler: {(action:UIAlertAction!) -> Void in
+            self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.ColombesVisio)}))
+        message.addAction(UIAlertAction(title: "EBC Colombes 2D", style: .default, handler: {(action:UIAlertAction!) -> Void in
             self.changeMap(asChildViewController: self.mapWizeController, mapSelected: Map.ColombesMapWize)}))
         OperationQueue.main.addOperation {
             self.present(message,animated: true, completion: nil)
@@ -160,34 +149,6 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
         }
     }
     
-    //Read Keys.plist
-    private func readPList(key: String) -> String{
-        var keys: [String:String]?
-        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") { //if file exists
-            keys = NSDictionary(contentsOfFile: path) as? [String : String]//keys is the file content
-            for k in keys!{
-                if(k.key == key){
-                    return keys![key]!
-                }
-            }
-            NSLog("Key not found, showing alert message")
-            let alertMessage = UIAlertController(title: "Key not found", message: "Update Keys.plist file", preferredStyle: UIAlertController.Style.alert)
-            alertMessage.addAction(UIAlertAction(title: "Exit", style: UIAlertAction.Style.destructive, handler:{ (action:UIAlertAction!) -> Void in
-                exit(0)
-            }))
-            self.present(alertMessage, animated: true, completion: nil)
-            return "Error"
-        }else{
-            let alertMessage = UIAlertController(title: "Invalid Key", message: "Keys.plist file must be missing", preferredStyle: UIAlertController.Style.alert)
-            alertMessage.addAction(UIAlertAction(title: "Exit", style: UIAlertAction.Style.destructive, handler:{ (action:UIAlertAction!) -> Void in
-                exit(0)
-            }))
-            present(alertMessage,animated: true,completion: nil)
-        }
-        return "Error"
-        //random error, see log files
-    }
-    
     //Display an alert box that quit the app
     func errorQuitApp(title: String, message: String){
         let message = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -205,5 +166,65 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
             self.present(message,animated: true, completion: nil)
         }
     }
-
+    
+    func copyEmulationFile(){
+        if let path = Bundle.main.path(forResource: "colombes", ofType: "gwl") {
+            NSLog("Emulation File Exists")
+            //let newPath = FileManager.default.urls(for: .applicationSupportDirectory, in:.localDomainMask)
+            let newPath = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)[0])
+            let dataPath = newPath.appendingPathComponent("data")
+            let replayPath = dataPath!.appendingPathComponent("replay")
+            do{
+                try FileManager.default.createDirectory(atPath: dataPath!.path, withIntermediateDirectories: true, attributes: nil)
+                try FileManager.default.createDirectory(atPath: replayPath.path, withIntermediateDirectories: true, attributes: nil)
+            }catch{
+                NSLog("Unable to create directories")
+            }
+            do{
+                let gwlPath = replayPath.appendingPathComponent("colombes.gwl")
+                if(!FileManager.default.fileExists(atPath: gwlPath.path)){
+                    NSLog("GWL File missing, creating....")
+                    try FileManager.default.copyItem(atPath: path, toPath: gwlPath.path)
+                }else{
+                    NSLog("GWL File already exists")
+                }
+            }
+            catch (let error){
+                NSLog("Unable to copy file: " + error.localizedDescription)
+            }
+        }
+    }
+    
+    func deleteEmulationFile(){
+        if let path = Bundle.main.path(forResource: "colombes", ofType: "gwl") {
+            NSLog("Emulation File Exists")
+            //let newPath = FileManager.default.urls(for: .applicationSupportDirectory, in:.localDomainMask)
+            let newPath = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)[0])
+            let dataPath = newPath.appendingPathComponent("data")
+            let replayPath = dataPath!.appendingPathComponent("replay")
+            do{
+                try FileManager.default.createDirectory(atPath: dataPath!.path, withIntermediateDirectories: true, attributes: nil)
+                try FileManager.default.createDirectory(atPath: replayPath.path, withIntermediateDirectories: true, attributes: nil)
+            }catch{
+                NSLog("Unable to create directories")
+            }
+            do{
+                let gwlPath = replayPath.appendingPathComponent("colombes.gwl")
+                if(!FileManager.default.fileExists(atPath: gwlPath.path)){
+                    NSLog("GWL File missing")
+                    try FileManager.default.copyItem(atPath: path, toPath: gwlPath.path)
+                }else{
+                    NSLog("GWL File exists, deleting....")
+                    try FileManager.default.removeItem(at: gwlPath  )
+                }
+            }
+            catch (let error){
+                NSLog("Unable to copy file: " + error.localizedDescription)
+            }
+        }
+    }
 }
+
+
+
+

@@ -89,7 +89,7 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
     
     
     //Tell Indoor Location Provider to update the location on the map
-    func setUserPosition(_ coordinates: CLLocationCoordinate2D){
+    func setUserPosition(_ coordinates: CLLocationCoordinate2D, floor:Int){
         if(!isLocationProviderSet){
             mapwizePlugin.setIndoorLocationProvider(locationProvider)
             isLocationProviderSet=true

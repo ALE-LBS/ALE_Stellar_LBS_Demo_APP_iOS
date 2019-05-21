@@ -9,9 +9,6 @@
 import Foundation
 
 enum Map{
-    case Emulator
-    case BrestMapWize
-    case BrestVisio
     case ColombesMapWize
     case ColombesVisio
     case Transportation

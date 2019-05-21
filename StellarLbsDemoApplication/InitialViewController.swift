@@ -14,18 +14,19 @@ class InitialViewController:UIViewController{
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var connectButton: UIButton!
     
-    private var navigationButton: UIBarButtonItem!
-    
-    public func setNavigationButton(_ button : UIBarButtonItem){
-        self.navigationButton = button
-    }
+    var masterViewController: MasterViewController!
     
     //Request from https://stackoverflow.com/questions/48285694/swift-json-login-rest-with-post-and-get-response-example/48306950#48306950
     @IBAction func connect(){
         if(!loginField.text!.isEmpty || !passwordField.text!.isEmpty){
+            masterViewController.username = loginField.text
+            //******************************TO DELETE************************************************************
             if(loginField.text == "Tiltd" && passwordField.text == "Bastion"){ //Hardcoded credentials
-                self.navigationButton.isEnabled = true
-                UIApplication.shared.sendAction(navigationButton.action!, to:navigationButton.target, from: self, for: nil)
+                self.masterViewController.copyEmulationFile()
+                self.masterViewController.OASKey = "8wkvGlwsY1g2fQvvUFTA@eu"
+                self.masterViewController.navigationButton.isEnabled = true
+                UIApplication.shared.sendAction(masterViewController.navigationButton.action!, to:masterViewController.navigationButton.target, from: self, for: nil)
+            //***************************************************************************************************
             }else{
                 //Building request
                 let endpoint: String = "https://demoaccess.al-mydemo.com/LBS/"+loginField.text!+"/"+passwordField.text!
@@ -35,7 +36,6 @@ class InitialViewController:UIViewController{
                 let urlRequest: URLRequest = URLRequest(url: url)
                 let config: URLSessionConfiguration = URLSessionConfiguration.default
                 let session: URLSession = URLSession(configuration: config)
-                
                 let request = session.dataTask(with: urlRequest) {
                     (data, response, error) in
                     //Handle errors
@@ -54,13 +54,21 @@ class InitialViewController:UIViewController{
                             NSLog("Error converting data to JSON (Guard)")
                             return
                         }
-                        NSLog("The response is: " + responseJson.description)
                         //Extract the key from JSON Response
                         guard let responseKey = responseJson["key"] as? String else {
                             NSLog("Could not retrieve the key")
                             return
                         }
-                        NSLog("The key is: " + responseKey)
+                        self.masterViewController.OASKey = responseKey
+
+                        /*guard let responseSiteId = responseJson["siteId"] as? String else {
+                            NSLog("Could not retrive the site Id")
+                            return
+                        }
+                        self.masterViewController.siteId = responseSiteId*/
+                        
+                        self.masterViewController.navigationButton.isEnabled = true
+                        UIApplication.shared.sendAction(self.masterViewController.navigationButton.action!, to:self.masterViewController.navigationButton.target, from: self, for: nil)
                     }
                     catch{
                         NSLog("Error converting data to JSON (Exception)")
@@ -69,12 +77,11 @@ class InitialViewController:UIViewController{
                 }
                 //Send the request
                 request.resume()
+
             }
         }else{
             NSLog("Empty Fields, Connection Failed")
         }
 
     }
-    
-    
 }
