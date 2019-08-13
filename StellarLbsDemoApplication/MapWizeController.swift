@@ -46,7 +46,9 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
         case PLACE_CLICK:
             NSLog("Place Click")
             mapwizePlugin.removeMarkers()
-            mapwizePlugin.addMarker(coreLocationToMapwize(clickEvent.place.center()))
+            mapwizePlugin.addMarker(coreLocationToMapwize(clickEvent.place.center())) { (annotation) in
+                //NSLog(annotation)
+            }
             let button = createButton(text: "Go", x: 10, y: Int(view.bounds.maxY-80), width: 50, height: 50)
             lastPlace = clickEvent.place
             button.addTarget(self, action: #selector(getDirection), for: .touchUpInside)
@@ -60,19 +62,16 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
     }
     
     @objc func getDirection(){
-        //Can't access the API (idk why)
-        MWZApi.getAccess("98d7bc53090ecc4da62e09269332fe5b", success: {
+        mapwizePlugin.grantAccess("PINchfWpknqcXjAE", success: {
             NSLog("API Success")
-            MWZApi.getDirectionWith(from: self.locationProvider.getLastUserPositionMWZ(), to: self.coreLocationToMapwize(self.lastPlace!.center()) , isAccessible: false, success:
-                { (direction) in
-                    NSLog("direction: "+direction!.description)
-            }) { (error) in
-                NSLog("error " + error!.localizedDescription)
-            }
-        }) { (err) in
+            MWZApi.signin("98087bcfa9f1a716913591a5f3c8212a", success: {
+                NSLog("Sign In Success")
+            }, failure: { (r) in
+                NSLog("Sign In Failure")
+            })
+        }) { (r) in
             NSLog("API Failure")
         }
-        
         
     }
     
@@ -101,7 +100,7 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
     }
     
     func coreLocationToMapwize(_ location:CLLocationCoordinate2D) -> MWZLatLngFloor{
-        return MWZLatLngFloor.init(latitude: location.latitude, longitude: location.longitude)
+        return MWZLatLngFloor.init(latitude: location.latitude, longitude: location.longitude, floor: 0)
     }
     
     func createButton(text:String, x:Int, y:Int, width:Int, height:Int) -> UIButton{

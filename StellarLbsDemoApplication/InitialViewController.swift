@@ -66,7 +66,7 @@ class InitialViewController:UIViewController{
                             return
                         }
                         self.masterViewController.siteId = responseSiteId*/
-                        
+                        self.masterViewController.copyEmulationFile()
                         self.masterViewController.navigationButton.isEnabled = true
                         UIApplication.shared.sendAction(self.masterViewController.navigationButton.action!, to:self.masterViewController.navigationButton.target, from: self, for: nil)
                     }

@@ -29,8 +29,10 @@
 	<string>pk.eyJ1IjoidmF5bW9uaW4iLCJhIjoiY2pjdWlncWt3M2U1ajMzcGdxYTBqeGh3diJ9.dyMNTJktwr2RujuRf4n3GA</string>
 	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
 	<true/>
+	<key>MWZCustomApiUrl</key>
+	<string>https://api.mapwize.io/v1/</string>
 	<key>MWZMapwizeApiKey</key>
-	<string>98d7bc53090ecc4da62e09269332fe5b</string>
+	<string>98087bcfa9f1a716913591a5f3c8212a</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
