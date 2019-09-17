@@ -44,8 +44,6 @@ class OASLocationProvider: ILIndoorLocationProvider {
     }
     
     func setLocation(indoorLocation:ILIndoorLocation){
-        NSLog(String(indoorLocation.latitude))
-        NSLog(String(indoorLocation.longitude))
         self.dispatchDidUpdate(indoorLocation)
     }
     

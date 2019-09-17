@@ -40,7 +40,6 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
     //NAOSyncDelegate
     func didSynchronizationSuccess() {
         NSLog("didSynchronizationSuccess")
-        masterViewController?.deleteEmulationFile()
         locationHandle!.start()
         geofencingHandle!.start()
     }
@@ -103,10 +102,10 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
     }
     
     func didLocationChange(_ location: CLLocation!) {
-        NSLog("didLocationChange")
+        /*NSLog("didLocationChange")
         NSLog("latitude: " + location.coordinate.latitude.description)
         NSLog("longitude: " + location.coordinate.longitude.description)
-        NSLog("altitude: " + location.altitude.description)
+        NSLog("altitude: " + location.altitude.description)*/
         guard masterViewController != nil else{
             return
         }

@@ -21,7 +21,7 @@ class InitialViewController:UIViewController{
         if(!loginField.text!.isEmpty || !passwordField.text!.isEmpty){
             masterViewController.username = loginField.text
             //******************************TO DELETE************************************************************
-            if(loginField.text == "Tiltd" && passwordField.text == "Bastion"){ //Hardcoded credentials
+            if(loginField.text == "Vincent" && passwordField.text == "Aymonin"){ //Hardcoded credentials
                 self.masterViewController.copyEmulationFile()
                 self.masterViewController.OASKey = "8wkvGlwsY1g2fQvvUFTA@eu"
                 self.masterViewController.navigationButton.isEnabled = true
@@ -66,7 +66,7 @@ class InitialViewController:UIViewController{
                             return
                         }
                         self.masterViewController.siteId = responseSiteId*/
-                        
+                        self.masterViewController.copyEmulationFile()
                         self.masterViewController.navigationButton.isEnabled = true
                         UIApplication.shared.sendAction(self.masterViewController.navigationButton.action!, to:self.masterViewController.navigationButton.target, from: self, for: nil)
                     }
