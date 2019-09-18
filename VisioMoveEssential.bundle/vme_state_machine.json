@@ -403,7 +403,7 @@
                     "class": "VMENavigationView",
                     "handles": [
                         {
-                            "signal": "Navigation"
+                            "signal": "NavigationDisplayRequest"
                         },
                         {
                             "signal": "Instruction"
@@ -412,7 +412,7 @@
                             "signal": "ParametersLoaded"
                         },
                         {
-                            "signal": "NavigationReady"
+                            "signal": "NavigationDisplayReady"
                         },
                         {
                             "signal": "MapRequest"
@@ -427,7 +427,7 @@
                     "class": "VMENavigationInstructionSource",
                     "handles": [
                         {
-                            "signal": "Navigation"
+                            "signal": "NavigationDisplayRequest"
                         },
                         {
                             "signal": "PlaceDataLoaded"
@@ -632,22 +632,22 @@
                     "signal": "ParametersLoaded"
                 },
                 {
-                    "signal": "State"
-                },
-                {
                     "signal": "MapLoaded"
                 },
                 {
-                    "signal": "Navigation"
+                    "signal": "NavigationDisplayRequest"
                 },
                 {
                     "signal": "Instruction"
                 },
                 {
-                    "signal": "NavigationReady"
+                    "signal": "NavigationDisplayReady"
                 },
                 {
                     "signal": "PositionUtilsReady"
+                },
+                {
+                    "signal": "NavigationDestroyRequest"
                 }
             ]
         },
@@ -660,9 +660,6 @@
                 },
                 {
                     "signal": "RouteRequest"
-                },
-                {
-                    "signal": "MapRequest"
                 },
                 {
                     "signal": "InstructionRequest"
@@ -686,7 +683,22 @@
                     "signal": "NavigationOverlayGenerated"
                 },
                 {
-                    "signal": "NavigationReady"
+                    "signal": "NavigationDisplayReady"
+                },
+                {
+                    "signal": "State"
+                },
+                {
+                    "signal": "NavigationDestroyFinish"
+                },
+                {
+                    "signal": "NavigationOverlayDestroyed"
+                },
+                {
+                  "signal": "NavigationDestroyRequest"
+                },
+                {
+                    "signal": "NavigationDisplayRequest"
                 }
             ]
         },
@@ -704,7 +716,7 @@
                     "signal": "MapRequest"
                 },
                 {
-                    "signal": "Navigation"
+                    "signal": "NavigationDisplayRequest"
                 },
                 {
                     "signal": "LocationData"
@@ -720,6 +732,9 @@
                 },
                 {
                     "signal": "MapLoaded"
+                },
+                {
+                    "signal": "PositionUtilsReady"
                 }
             ]
         },
@@ -741,9 +756,6 @@
                 },
                 {
                     "signal": "SurfaceChanged"
-                },
-                {
-                    "signal": "PositionUtilsReady"
                 },
                 {
                     "signal": "PlaceDataLoaded"
@@ -850,20 +862,14 @@
             ]
         },
         {
-            "id": "placeInfoSolver",
-            "class": "VMEPlaceInfoSolver",
+            "id": "placeSelectedSolver",
+            "class": "VMEPlaceSelectedSolver",
             "handles": [
                 {
-                    "signal": "PlaceInfoRequest"
+                    "signal": "DidSelectPlace"
                 },
                 {
-                    "signal": "PlaceDataLoaded"
-                },
-                {
-                    "signal" : "DidSelectPlaceReply"
-                },
-                {
-                    "signal": "PositionUtilsReady"
+                    "signal" : "DidSelectPlaceMediatorReply"
                 }
             ]
         },
@@ -1013,7 +1019,7 @@
                     "signal": "PlaceListener"
                 },
                 {
-                    "signal": "DidSelectPlace"
+                    "signal": "DidSelectPlaceMediatorRequest"
                 }
             ]
         },
@@ -1023,6 +1029,18 @@
             "handles": [
                 {
                     "signal": "MapLoaded"
+                }
+            ]
+        },
+        {
+            "id": "buildingListenerMediator",
+            "class": "VMEBuildingListenerMediator",
+            "handles": [
+                {
+                    "signal": "BuildingListener"
+                },
+                {
+                    "signal": "DidSelectBuilding"
                 }
             ]
         }

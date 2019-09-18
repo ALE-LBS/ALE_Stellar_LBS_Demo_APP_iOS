@@ -39,6 +39,6 @@ typedef NS_ENUM(NSInteger, VMEViewMode)
      *
      * @version 1.0
      */
-    VMEViewModeUnknown,
+    VMEViewModeUnknown
 };
 

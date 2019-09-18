@@ -2,7 +2,7 @@
 //  VMELog+CoreDataClass.h
 //  
 //
-//  Created by Jenkins on 04/04/2019.
+//  Created by Jenkins on 30/08/2019.
 //
 //  This file was automatically generated and should not be edited.
 //

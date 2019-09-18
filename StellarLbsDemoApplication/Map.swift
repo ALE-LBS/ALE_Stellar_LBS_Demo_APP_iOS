@@ -14,4 +14,5 @@ enum Map{
     case Transportation
     case Hospitality
     case Healthcare
+    case Education
 }

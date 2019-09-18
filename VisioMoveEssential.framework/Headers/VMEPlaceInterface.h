@@ -6,6 +6,10 @@
  */
 #import "VMEPosition.h"
 #import "VMEMacros.h"
+#import "VMEPlaceAltitudeMode.h"
+#import "VMEPlaceAnchorMode.h"
+#import "VMEPlaceDisplayMode.h"
+
 @class VMEMapView;
 @class VMERouteResult;
 @class VMEPlace;
@@ -18,6 +22,7 @@
  *
  * It encapsulates some logic for controlling the camera's heading. It should only
  * be constructed using the factory helper methods below.
+ *
  * @version 1.1
  */
 @interface  VMEPlaceOrientation : NSObject
@@ -39,123 +44,7 @@
  * @version 1.2
  */
 +(instancetype)placeOrientationFixedWithHeading:(float)heading;
-
 @end
-
-
-#pragma mark - VMEPlaceAnchorMode
-/**
- * This enum defines the possible anchor modes.
- * An anchor mode determines how an place object is
- * anchored to a given position.
- *
- * @version 1.1
- */
-typedef NS_ENUM(NSInteger, VMEPlaceAnchorMode) {
-    /**
-     * Anchor to the top left.
-     *
-     * @version 1.1
-     */
-    VMEPlaceAnchorModeTopLeft,
-    /**
-     * Anchor to the top center
-     *
-     * @version 1.1
-     */
-    VMEPlaceAnchorModeTopCenter,
-    /**
-     * Anchor to the top right
-     *
-     * @version 1.1
-     */
-    VMEPlaceAnchorModeTopRight,
-    /**
-     * Anchor to the center left
-     *
-     * @version 1.1
-     */
-    VMEPlaceAnchorModeCenterLeft,
-    /**
-     * Anchor to the center
-     *
-     * @version 1.1
-     */
-    VMEPlaceAnchorModeCenter,
-    /**
-     * Anchor to the center right
-     *
-     * @version 1.1
-     */
-    VMEPlaceAnchorModeCenterRight,
-    /**
-     * Anchor to the bottom left
-     *
-     * @version 1.1
-     */
-    VMEPlaceAnchorModeBottomLeft,
-    /**
-     * Anchor to the bottom center
-     *
-     * @version 1.1
-     */
-    VMEPlaceAnchorModeBottomCenter,
-    /**
-     * Anchor to the bottom right
-     *
-     * @version 1.1
-     */
-    VMEPlaceAnchorModeBottomRight
-
-};
-
-
-#pragma mark - VMEPlaceAltitudeMode
-/**
- * This enum defines the possible altitude modes. An altitude mode determines
- * how the altitude is interpreted.
- *
- * @version 1.1
- */
-typedef NS_ENUM(NSInteger, VMEPlaceAltitudeMode) {
-    /**
-     * The altitude is interpreted relative to the terrain.
-     *
-     * @version 1.1
-     */
-    VMEPlaceAltitudeModeRelative,
-    /**
-     * The altitude is interpreted as the height above the WGS84 ellipsoid
-     *
-     * @version 1.1
-     */
-    VMEPlaceAltitudeModeAbsolute
-};
-
-
-#pragma mark - VMEPlaceDisplayMode
-/**
- * This enum defines the possible display modes. A display mode determines
- * how the point is displayed within the map.
- *
- * @version 1.1
- */
-typedef NS_ENUM(NSInteger, VMEPlaceDisplayMode) {
-    /**
-     * The place will obscured when located behind map surfaces.
-     *
-     * @version 1.1
-     */
-    VMEPlaceDisplayModeInlay,
-    /**
-     * The place is displayed on top of all map surfaces, regardless of whether
-     * they are physical infront of the place.
-     *
-     * @version 1.1
-     */
-    VMEPlaceDisplayModeOverlay
-};
-
 
 #pragma mark - VMEPlaceVisibilityRamp
 /**
@@ -739,7 +628,7 @@ typedef NS_ENUM(NSInteger, VMEPlaceDisplayMode) {
  * @return A place object that corresponds to the place ID, or null if ID doesn't exist.
  *
  * @note Can be called during or after the
- * VMEMapListener::mapDidLoad: notification.
+ * VMELifeCycleListener::mapDidLoad: notification.
  *
  * * @note Applies to:
  * - static places
@@ -753,7 +642,7 @@ typedef NS_ENUM(NSInteger, VMEPlaceDisplayMode) {
  * Queries all category IDs within the map.
  *
  * @note Can be called during or after the
- * VMEMapListener::mapDidLoad: notification
+ * VMELifeCycleListener::mapDidLoad: notification
  *
  * @return An array of category IDs within the map.  Will return an empty array if
  * called before the map has correctly loaded.
@@ -769,10 +658,36 @@ typedef NS_ENUM(NSInteger, VMEPlaceDisplayMode) {
  * @return A category object that corresponds to the category ID, or null if ID doesn't exist.
  *
  * @note Can be called during or after the
- * VMEMapListener::mapDidLoad: notification.
+ * VMELifeCycleListener::mapDidLoad: notification.
  *
  * @version 1.10
  */
 -(VMECategory*) getCategory:(NSString*)categoryID;
+
+/**
+ * Returns a place's center position.
+ *
+ * @param placeID The ID of the place in question
+ * @return The place's center position.
+ *
+ * @note Can be called during or after the
+ * VMELifeCycleListener::mapDidLoad: notification.
+ *
+ * @version 1.16
+ */
+-(VMEPosition*) getPlacePosition:(NSString*)placeID;
+
+/**
+ * Returns The place's bounding box.
+ *
+ * @param placeID The ID of the place in question
+ * @return An array of positions that represent the places bounding box
+ *
+ * @note Can be called during or after the
+ * VMELifeCycleListener::mapDidLoad: notification.
+ *
+ * @version 1.16
+ */
+-(NSArray<VMEPosition*>*) getPlaceBoundingPositions:(NSString*)placeID;
 
 @end

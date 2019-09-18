@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C83FECA3FDF95C47D4CDED6 /* Pods_StellarLbsDemoApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D667347C5FA4841359AB4F /* Pods_StellarLbsDemoApplication.framework */; };
+		5B9C2F538E27838E36BF124D /* Pods_StellarLbsDemoApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E937EDCA580DE61EA112F2 /* Pods_StellarLbsDemoApplicationTests.framework */; };
 		841134FD2056C523007A23F3 /* alerts_emulator.json in Resources */ = {isa = PBXBuildFile; fileRef = 841134FC2056C523007A23F3 /* alerts_emulator.json */; };
+		84B2D16023322957001AD44E /* colombes.gwl in Resources */ = {isa = PBXBuildFile; fileRef = 84C1F2F423312C7D0057F469 /* colombes.gwl */; };
+		84B2D16123322C45001AD44E /* VisioMoveEssential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8BCC5D22671EE700E995B6 /* VisioMoveEssential.framework */; };
 		84C5CE5C2046A969005DD7D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE5B2046A969005DD7D0 /* AppDelegate.swift */; };
 		84C5CE5E2046A969005DD7D0 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE5D2046A969005DD7D0 /* MasterViewController.swift */; };
 		84C5CE612046A969005DD7D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5CE5F2046A969005DD7D0 /* Main.storyboard */; };
@@ -15,10 +19,9 @@
 		84C5CE662046A969005DD7D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C5CE642046A969005DD7D0 /* LaunchScreen.storyboard */; };
 		84C5CE712046A969005DD7D0 /* StellarLbsDemoApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE702046A969005DD7D0 /* StellarLbsDemoApplicationTests.swift */; };
 		84C5CE7C2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE7B2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift */; };
-		84D2EDC2205172970039F15B /* OASLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2EDC1205172970039F15B /* OASLocationProvider.swift */; };
+		84D2EDC2205172970039F15B /* SimpleLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2EDC1205172970039F15B /* SimpleLocationProvider.swift */; };
 		84D2EDC420517F5B0039F15B /* nao.kml in Resources */ = {isa = PBXBuildFile; fileRef = 84D2EDC320517F5B0039F15B /* nao.kml */; };
-		B28E1473F993E8F6A88AD130 /* Pods_StellarLbsDemoApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916D782E4617D51A73E9A464 /* Pods_StellarLbsDemoApplication.framework */; };
-		BF3C59DF228AFDD700ADD995 /* colombes.gwl in Resources */ = {isa = PBXBuildFile; fileRef = BF3C59DE228AFDD700ADD995 /* colombes.gwl */; };
+		84DB0F28233102CD00C5CF32 /* IndoorLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DB0F27233102CD00C5CF32 /* IndoorLocation.framework */; };
 		BF69E1A62264A3030005BEF1 /* LocationHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A52264A3030005BEF1 /* LocationHandle.swift */; };
 		BF69E1A82265FCD90005BEF1 /* MapWizeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A72265FCD90005BEF1 /* MapWizeController.swift */; };
 		BF69E1AA2265FCF10005BEF1 /* VisioGlobeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A92265FCF10005BEF1 /* VisioGlobeController.swift */; };
@@ -27,10 +30,8 @@
 		BF85C2742268B22E00EB712D /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF85C2732268B22E00EB712D /* Map.swift */; };
 		BF8BCC6122671F2C00E995B6 /* VisioMoveEssential.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF8BCC5F22671F2B00E995B6 /* VisioMoveEssential.bundle */; };
 		BF8BCC6222671F2C00E995B6 /* VisioMoveEssentialStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BF8BCC6022671F2B00E995B6 /* VisioMoveEssentialStrings.bundle */; };
-		BFBEC5F1226769CF00C62392 /* VisioMoveEssential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBEC5F0226769CF00C62392 /* VisioMoveEssential.framework */; };
 		BFBEC6072267704300C62392 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBEC5F222676C1800C62392 /* CoreData.framework */; };
-		DECECF9C4C0DA0AAD3CAD503 /* Pods_StellarLbsDemoApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528FEEC4EBE6675C93728FD8 /* Pods_StellarLbsDemoApplicationTests.framework */; };
-		E95272645DBC70505313AA91 /* Pods_StellarLbsDemoApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14235BB84A36676A8BE371B5 /* Pods_StellarLbsDemoApplicationUITests.framework */; };
+		E9D5846161AB7023CBFF1813 /* Pods_StellarLbsDemoApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FD368CE339C7D8724C33E3 /* Pods_StellarLbsDemoApplicationUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,13 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14235BB84A36676A8BE371B5 /* Pods_StellarLbsDemoApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StellarLbsDemoApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1458D6295767A5C714450626 /* Pods-StellarLbsDemoApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplication/Pods-StellarLbsDemoApplication.release.xcconfig"; sourceTree = "<group>"; };
-		528FEEC4EBE6675C93728FD8 /* Pods_StellarLbsDemoApplicationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StellarLbsDemoApplicationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6853248001F03AAFAB690CA1 /* Pods-StellarLbsDemoApplicationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationUITests/Pods-StellarLbsDemoApplicationUITests.release.xcconfig"; sourceTree = "<group>"; };
-		75B4204A0B218C410D5BD0AF /* Pods-StellarLbsDemoApplicationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationUITests/Pods-StellarLbsDemoApplicationUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		7FC9E6DBE44491615D7ACD5A /* Pods-StellarLbsDemoApplicationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationTests/Pods-StellarLbsDemoApplicationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4427AEFD89799C005BD2EB29 /* Pods-StellarLbsDemoApplicationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationUITests/Pods-StellarLbsDemoApplicationUITests.release.xcconfig"; sourceTree = "<group>"; };
+		49FD368CE339C7D8724C33E3 /* Pods_StellarLbsDemoApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StellarLbsDemoApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		841134FC2056C523007A23F3 /* alerts_emulator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = alerts_emulator.json; sourceTree = "<group>"; };
+		846D05232330FC5E00E17D0A /* MapwizeForMapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapwizeForMapbox.framework; path = Pods/MapwizeForMapbox/MapwizeForMapbox.framework; sourceTree = "<group>"; };
+		846D05252330FCA100E17D0A /* IndoorLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IndoorLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C1F2F423312C7D0057F469 /* colombes.gwl */ = {isa = PBXFileReference; lastKnownFileType = file; path = colombes.gwl; sourceTree = SOURCE_ROOT; };
 		84C5CE582046A969005DD7D0 /* StellarLbsDemoApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StellarLbsDemoApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C5CE5B2046A969005DD7D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C5CE5D2046A969005DD7D0 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -72,12 +72,10 @@
 		84C5CE7B2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarLbsDemoApplicationUITests.swift; sourceTree = "<group>"; };
 		84C5CE7D2046A969005DD7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C5CE892046A977005DD7D0 /* StellarLbsDemoApplication-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StellarLbsDemoApplication-Bridging-Header.h"; sourceTree = "<group>"; };
-		84D2EDC1205172970039F15B /* OASLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OASLocationProvider.swift; sourceTree = "<group>"; };
+		84D2EDC1205172970039F15B /* SimpleLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLocationProvider.swift; sourceTree = "<group>"; };
 		84D2EDC320517F5B0039F15B /* nao.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = nao.kml; sourceTree = "<group>"; };
-		916D782E4617D51A73E9A464 /* Pods_StellarLbsDemoApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StellarLbsDemoApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9A1D859398F16869C1DDAFB /* Pods-StellarLbsDemoApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplication/Pods-StellarLbsDemoApplication.debug.xcconfig"; sourceTree = "<group>"; };
-		BC17BC66340B453CB78E9436 /* Pods-StellarLbsDemoApplicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationTests/Pods-StellarLbsDemoApplicationTests.release.xcconfig"; sourceTree = "<group>"; };
-		BF3C59DE228AFDD700ADD995 /* colombes.gwl */ = {isa = PBXFileReference; lastKnownFileType = file; name = colombes.gwl; path = "../../../../Android/eDemo/ALE_Stellar_LBS_Demo_Application-master/app/src/main/assets/colombes.gwl"; sourceTree = "<group>"; };
+		84DB0F27233102CD00C5CF32 /* IndoorLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IndoorLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F7C32F2330D97E00F6FB50 /* IndoorLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IndoorLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF586A78226752A20048E8B7 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		BF586A81226759180048E8B7 /* Tests.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Tests.debug.xcconfig; sourceTree = "<group>"; };
 		BF586A82226759180048E8B7 /* Application.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Application.debug.xcconfig; sourceTree = "<group>"; };
@@ -96,6 +94,7 @@
 		BF8BCC5D22671EE700E995B6 /* VisioMoveEssential.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VisioMoveEssential.framework; sourceTree = "<group>"; };
 		BF8BCC5F22671F2B00E995B6 /* VisioMoveEssential.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = VisioMoveEssential.bundle; sourceTree = "<group>"; };
 		BF8BCC6022671F2B00E995B6 /* VisioMoveEssentialStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = VisioMoveEssentialStrings.bundle; sourceTree = "<group>"; };
+		BFA9D4C8F8E75D6413379DCC /* Pods-StellarLbsDemoApplicationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationUITests/Pods-StellarLbsDemoApplicationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BFBEC5EE226769C700C62392 /* VisioMoveEssential */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = VisioMoveEssential; path = ../VisioMoveEssential.framework/VisioMoveEssential; sourceTree = "<group>"; };
 		BFBEC5F0226769CF00C62392 /* VisioMoveEssential.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisioMoveEssential.framework; path = ../VisioMoveEssential.framework; sourceTree = "<group>"; };
 		BFBEC5F222676C1800C62392 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -111,6 +110,8 @@
 		BFBEC60B2267710000C62392 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BFBEC60E2267710F00C62392 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BFBEC6102267711200C62392 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C3D667347C5FA4841359AB4F /* Pods_StellarLbsDemoApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StellarLbsDemoApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3E937EDCA580DE61EA112F2 /* Pods_StellarLbsDemoApplicationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StellarLbsDemoApplicationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,9 +119,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B2D16123322C45001AD44E /* VisioMoveEssential.framework in Frameworks */,
+				84DB0F28233102CD00C5CF32 /* IndoorLocation.framework in Frameworks */,
 				BFBEC6072267704300C62392 /* CoreData.framework in Frameworks */,
-				BFBEC5F1226769CF00C62392 /* VisioMoveEssential.framework in Frameworks */,
-				B28E1473F993E8F6A88AD130 /* Pods_StellarLbsDemoApplication.framework in Frameworks */,
+				2C83FECA3FDF95C47D4CDED6 /* Pods_StellarLbsDemoApplication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DECECF9C4C0DA0AAD3CAD503 /* Pods_StellarLbsDemoApplicationTests.framework in Frameworks */,
+				5B9C2F538E27838E36BF124D /* Pods_StellarLbsDemoApplicationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E95272645DBC70505313AA91 /* Pods_StellarLbsDemoApplicationUITests.framework in Frameworks */,
+				E9D5846161AB7023CBFF1813 /* Pods_StellarLbsDemoApplicationUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +148,10 @@
 		035B93774C49E21683CE0C8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84DB0F27233102CD00C5CF32 /* IndoorLocation.framework */,
+				846D05252330FCA100E17D0A /* IndoorLocation.framework */,
+				846D05232330FC5E00E17D0A /* MapwizeForMapbox.framework */,
+				84F7C32F2330D97E00F6FB50 /* IndoorLocation.framework */,
 				BFBEC6102267711200C62392 /* CoreLocation.framework */,
 				BFBEC60E2267710F00C62392 /* CoreGraphics.framework */,
 				BFBEC60B2267710000C62392 /* OpenGLES.framework */,
@@ -163,22 +169,18 @@
 				BFBEC5EE226769C700C62392 /* VisioMoveEssential */,
 				BF586A78226752A20048E8B7 /* AVKit.framework */,
 				BF8BCC5D22671EE700E995B6 /* VisioMoveEssential.framework */,
-				916D782E4617D51A73E9A464 /* Pods_StellarLbsDemoApplication.framework */,
-				528FEEC4EBE6675C93728FD8 /* Pods_StellarLbsDemoApplicationTests.framework */,
-				14235BB84A36676A8BE371B5 /* Pods_StellarLbsDemoApplicationUITests.framework */,
+				C3D667347C5FA4841359AB4F /* Pods_StellarLbsDemoApplication.framework */,
+				F3E937EDCA580DE61EA112F2 /* Pods_StellarLbsDemoApplicationTests.framework */,
+				49FD368CE339C7D8724C33E3 /* Pods_StellarLbsDemoApplicationUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		510DC1A9DBDB047985051CA4 /* Pods */ = {
+		18DFC1F9D0420A9365185B08 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A9A1D859398F16869C1DDAFB /* Pods-StellarLbsDemoApplication.debug.xcconfig */,
-				1458D6295767A5C714450626 /* Pods-StellarLbsDemoApplication.release.xcconfig */,
-				7FC9E6DBE44491615D7ACD5A /* Pods-StellarLbsDemoApplicationTests.debug.xcconfig */,
-				BC17BC66340B453CB78E9436 /* Pods-StellarLbsDemoApplicationTests.release.xcconfig */,
-				75B4204A0B218C410D5BD0AF /* Pods-StellarLbsDemoApplicationUITests.debug.xcconfig */,
-				6853248001F03AAFAB690CA1 /* Pods-StellarLbsDemoApplicationUITests.release.xcconfig */,
+				BFA9D4C8F8E75D6413379DCC /* Pods-StellarLbsDemoApplicationUITests.debug.xcconfig */,
+				4427AEFD89799C005BD2EB29 /* Pods-StellarLbsDemoApplicationUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -200,8 +202,8 @@
 				84C5CE6F2046A969005DD7D0 /* StellarLbsDemoApplicationTests */,
 				84C5CE7A2046A969005DD7D0 /* StellarLbsDemoApplicationUITests */,
 				84C5CE592046A969005DD7D0 /* Products */,
-				510DC1A9DBDB047985051CA4 /* Pods */,
 				035B93774C49E21683CE0C8B /* Frameworks */,
+				18DFC1F9D0420A9365185B08 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,7 +220,7 @@
 		84C5CE5A2046A969005DD7D0 /* StellarLbsDemoApplication */ = {
 			isa = PBXGroup;
 			children = (
-				BF3C59DE228AFDD700ADD995 /* colombes.gwl */,
+				84C1F2F423312C7D0057F469 /* colombes.gwl */,
 				841134FC2056C523007A23F3 /* alerts_emulator.json */,
 				84D2EDC320517F5B0039F15B /* nao.kml */,
 				84C5CE5B2046A969005DD7D0 /* AppDelegate.swift */,
@@ -229,7 +231,7 @@
 				BF69E1A52264A3030005BEF1 /* LocationHandle.swift */,
 				BF85C2732268B22E00EB712D /* Map.swift */,
 				BF7D691322929D85005CB0A5 /* PeopleTracker.swift */,
-				84D2EDC1205172970039F15B /* OASLocationProvider.swift */,
+				84D2EDC1205172970039F15B /* SimpleLocationProvider.swift */,
 				84C5CE5F2046A969005DD7D0 /* Main.storyboard */,
 				84C5CE622046A969005DD7D0 /* Assets.xcassets */,
 				84C5CE642046A969005DD7D0 /* LaunchScreen.storyboard */,
@@ -264,11 +266,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84C5CE802046A969005DD7D0 /* Build configuration list for PBXNativeTarget "StellarLbsDemoApplication" */;
 			buildPhases = (
-				7B71871BDE2DD0D9F66FCD51 /* [CP] Check Pods Manifest.lock */,
+				CDF7EB433766ADD831CDBD57 /* [CP] Check Pods Manifest.lock */,
 				84C5CE542046A969005DD7D0 /* Sources */,
 				84C5CE552046A969005DD7D0 /* Frameworks */,
 				84C5CE562046A969005DD7D0 /* Resources */,
-				BF6FB70FD8B4366C7FC979F6 /* [CP] Embed Pods Frameworks */,
+				FA302C456E837691123B0EFC /* [CP] Embed Pods Frameworks */,
+				F4CCF4553D84CC98EC8DC96A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -283,10 +286,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84C5CE832046A969005DD7D0 /* Build configuration list for PBXNativeTarget "StellarLbsDemoApplicationTests" */;
 			buildPhases = (
-				83FA8C3CBE44A99C2B19229C /* [CP] Check Pods Manifest.lock */,
+				743BEB1DB1EF7B609AA4E008 /* [CP] Check Pods Manifest.lock */,
 				84C5CE682046A969005DD7D0 /* Sources */,
 				84C5CE692046A969005DD7D0 /* Frameworks */,
 				84C5CE6A2046A969005DD7D0 /* Resources */,
+				8FC9D4DB8F2203348B2EB223 /* [CP] Embed Pods Frameworks */,
+				0B557AF7340D19F2837C4DDD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -302,10 +307,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84C5CE862046A969005DD7D0 /* Build configuration list for PBXNativeTarget "StellarLbsDemoApplicationUITests" */;
 			buildPhases = (
-				83E5A2D545164CFC53A0C5E7 /* [CP] Check Pods Manifest.lock */,
+				E25F12423BD4C9BB8331DD8C /* [CP] Check Pods Manifest.lock */,
 				84C5CE732046A969005DD7D0 /* Sources */,
 				84C5CE742046A969005DD7D0 /* Frameworks */,
 				84C5CE752046A969005DD7D0 /* Resources */,
+				1A7C52A8671F4E268DF50AB3 /* [CP] Embed Pods Frameworks */,
+				A3A23A00B4BEF0DB0959CB7A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,7 +331,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = ALE;
 				TargetAttributes = {
 					84C5CE572046A969005DD7D0 = {
@@ -371,11 +378,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B2D16023322957001AD44E /* colombes.gwl in Resources */,
 				BF8BCC6122671F2C00E995B6 /* VisioMoveEssential.bundle in Resources */,
 				BF8BCC6222671F2C00E995B6 /* VisioMoveEssentialStrings.bundle in Resources */,
 				84C5CE662046A969005DD7D0 /* LaunchScreen.storyboard in Resources */,
 				84C5CE632046A969005DD7D0 /* Assets.xcassets in Resources */,
-				BF3C59DF228AFDD700ADD995 /* colombes.gwl in Resources */,
 				84C5CE612046A969005DD7D0 /* Main.storyboard in Resources */,
 				841134FD2056C523007A23F3 /* alerts_emulator.json in Resources */,
 				84D2EDC420517F5B0039F15B /* nao.kml in Resources */,
@@ -399,43 +406,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7B71871BDE2DD0D9F66FCD51 /* [CP] Check Pods Manifest.lock */ = {
+		0B557AF7340D19F2837C4DDD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-StellarLbsDemoApplication-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StellarLbsDemoApplicationTests/Pods-StellarLbsDemoApplicationTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		83E5A2D545164CFC53A0C5E7 /* [CP] Check Pods Manifest.lock */ = {
+		1A7C52A8671F4E268DF50AB3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-StellarLbsDemoApplicationUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StellarLbsDemoApplicationUITests/Pods-StellarLbsDemoApplicationUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		83FA8C3CBE44A99C2B19229C /* [CP] Check Pods Manifest.lock */ = {
+		743BEB1DB1EF7B609AA4E008 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -453,7 +454,88 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BF6FB70FD8B4366C7FC979F6 /* [CP] Embed Pods Frameworks */ = {
+		8FC9D4DB8F2203348B2EB223 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StellarLbsDemoApplicationTests/Pods-StellarLbsDemoApplicationTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3A23A00B4BEF0DB0959CB7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StellarLbsDemoApplicationUITests/Pods-StellarLbsDemoApplicationUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDF7EB433766ADD831CDBD57 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StellarLbsDemoApplication-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E25F12423BD4C9BB8331DD8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StellarLbsDemoApplicationUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4CCF4553D84CC98EC8DC96A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StellarLbsDemoApplication/Pods-StellarLbsDemoApplication-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA302C456E837691123B0EFC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -486,7 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D2EDC2205172970039F15B /* OASLocationProvider.swift in Sources */,
+				84D2EDC2205172970039F15B /* SimpleLocationProvider.swift in Sources */,
 				BF85C2722268AD3700EB712D /* InitialViewController.swift in Sources */,
 				BF7D691422929D85005CB0A5 /* PeopleTracker.swift in Sources */,
 				BF85C2742268B22E00EB712D /* Map.swift in Sources */,
@@ -553,7 +635,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF586A8F226759FC0048E8B7 /* Application.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
@@ -610,6 +692,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -617,7 +700,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF586A8F226759FC0048E8B7 /* Application.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
@@ -667,6 +750,7 @@
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -675,16 +759,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF586A83226759180048E8B7 /* Project-Debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5B8GR28KJ6;
+				DEVELOPMENT_TEAM = 93BXXFPV6U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/MapwizeForMapbox",
 				);
 				INFOPLIST_FILE = StellarLbsDemoApplication/Info.plist;
 				KEEP_PRIVATE_EXTERNS = YES;
@@ -710,7 +794,7 @@
 					"-framework",
 					"\"Mapbox\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = StellarLbsDemoApplication.PersoVincent;
+				PRODUCT_BUNDLE_IDENTIFIER = StellarLbsDemoApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "StellarLbsDemoApplication/StellarLbsDemoApplication-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -723,16 +807,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF586A84226759180048E8B7 /* Project-Release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5B8GR28KJ6;
+				DEVELOPMENT_TEAM = 93BXXFPV6U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/MapwizeForMapbox",
 				);
 				INFOPLIST_FILE = StellarLbsDemoApplication/Info.plist;
 				KEEP_PRIVATE_EXTERNS = YES;
@@ -758,7 +842,7 @@
 					"-framework",
 					"\"Mapbox\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = StellarLbsDemoApplication.PersoVincent;
+				PRODUCT_BUNDLE_IDENTIFIER = StellarLbsDemoApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "StellarLbsDemoApplication/StellarLbsDemoApplication-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -771,6 +855,7 @@
 			baseConfigurationReference = BF586A81226759180048E8B7 /* Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -792,6 +877,7 @@
 			baseConfigurationReference = BF586A87226759190048E8B7 /* Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -810,9 +896,10 @@
 		};
 		84C5CE872046A969005DD7D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75B4204A0B218C410D5BD0AF /* Pods-StellarLbsDemoApplicationUITests.debug.xcconfig */;
+			baseConfigurationReference = BFA9D4C8F8E75D6413379DCC /* Pods-StellarLbsDemoApplicationUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -830,9 +917,10 @@
 		};
 		84C5CE882046A969005DD7D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6853248001F03AAFAB690CA1 /* Pods-StellarLbsDemoApplicationUITests.release.xcconfig */;
+			baseConfigurationReference = 4427AEFD89799C005BD2EB29 /* Pods-StellarLbsDemoApplicationUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

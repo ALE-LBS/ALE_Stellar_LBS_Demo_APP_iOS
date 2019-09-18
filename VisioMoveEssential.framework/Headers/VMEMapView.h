@@ -4,9 +4,9 @@
  * This file is subject to the terms and conditions defined in
  * file 'LICENSE.txt', which is part of this source code package.
  */
-
 #import <UIKit/UIKit.h>
 
+#import <VisioMoveEssential/VMEBuildingListener.h>
 #import <VisioMoveEssential/VMEComputeRouteInterface.h>
 #import <VisioMoveEssential/VMEStatisticsInterface.h>
 #import <VisioMoveEssential/VMELifeCycleListener.h>
@@ -14,6 +14,9 @@
 #import <VisioMoveEssential/VMEMapInterface.h>
 #import <VisioMoveEssential/VMEMapListener.h>
 #import <VisioMoveEssential/VMEOverlayViewInterface.h>
+#import <VisioMoveEssential/VMEPlaceAltitudeMode.h>
+#import <VisioMoveEssential/VMEPlaceAnchorMode.h>
+#import <VisioMoveEssential/VMEPlaceDisplayMode.h>
 #import <VisioMoveEssential/VMEPlaceInterface.h>
 #import <VisioMoveEssential/VMEPlaceListener.h>
 #import <VisioMoveEssential/VMESearchViewInterface.h>
@@ -119,6 +122,13 @@ IB_DESIGNABLE
  * @version 1.12
  */
 @property (nonatomic, weak) IBOutlet id<VMEPlaceListener> placeListener;
+
+/**
+ * The map listener delegate to receive building related notifications.
+ *
+ * @version 1.17
+ */
+@property (nonatomic, weak) IBOutlet id<VMEBuildingListener> buildingListener;
 
 @property (nonatomic) IBInspectable NSString *mapPath;
 @property (nonatomic) IBInspectable int mapSecretCode;

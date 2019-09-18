@@ -31,8 +31,6 @@
 	<true/>
 	<key>MWZMapwizeApiKey</key>
 	<string>98087bcfa9f1a716913591a5f3c8212a</string>
-	<key>MWZCustomApiUrl</key>
-	<string>https://api.mapwize.io/v1/</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>

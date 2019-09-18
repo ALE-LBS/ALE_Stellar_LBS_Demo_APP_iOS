@@ -73,8 +73,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nYY-Ve-u3z" customClass="VMEMapView">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DI2-UM-Gfg" customClass="VMEMapView">
+                                <rect key="frame" x="0.0" y="63" width="414" height="673"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -83,7 +83,7 @@
                         <viewLayoutGuide key="safeArea" id="FhE-zd-BdF"/>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="nYY-Ve-u3z" id="iR8-To-vXL"/>
+                        <outlet property="mapView" destination="DI2-UM-Gfg" id="H80-iG-EYx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9D-Qv-dxu" userLabel="First Responder" sceneMemberID="firstResponder"/>

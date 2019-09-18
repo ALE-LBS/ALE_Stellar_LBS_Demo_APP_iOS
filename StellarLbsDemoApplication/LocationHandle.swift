@@ -118,7 +118,9 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
         }else{
             masterViewController?.visioGlobeController.setUserPosition(location)
         }
-        PeopleTracker.recordLocation(siteId: masterViewController!.siteID, user: masterViewController!.username, lon: location.coordinate.longitude.description, lat: location.coordinate.latitude.description, alt: String(0))
+        for id in masterViewController!.siteId {
+            PeopleTracker.recordLocation(siteId: id, user: masterViewController!.username, lon: location.coordinate.longitude.description, lat: location.coordinate.latitude.description, alt: String(0))
+        }
         
     }
     

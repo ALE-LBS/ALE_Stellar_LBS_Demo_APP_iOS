@@ -21,9 +21,9 @@ class InitialViewController:UIViewController{
         if(!loginField.text!.isEmpty || !passwordField.text!.isEmpty){
             masterViewController.username = loginField.text
             //******************************TO DELETE************************************************************
-            if(loginField.text == "Vincent" && passwordField.text == "Aymonin"){ //Hardcoded credentials
+            if(loginField.text == "a" && passwordField.text == "a"){ //Hardcoded credentials
                 self.masterViewController.copyEmulationFile()
-                self.masterViewController.OASKey = "8wkvGlwsY1g2fQvvUFTA@eu"
+                self.masterViewController.OASKey = "Kz_sOzcwujXlPdF4U_eRfw@eu" //Dev Key
                 self.masterViewController.navigationButton.isEnabled = true
                 UIApplication.shared.sendAction(masterViewController.navigationButton.action!, to:masterViewController.navigationButton.target, from: self, for: nil)
             //***************************************************************************************************
@@ -49,6 +49,7 @@ class InitialViewController:UIViewController{
                         return
                     }
                     do{
+                        NSLog(String(decoding: responseData, as: UTF8.self))
                         //Convert response to JSON
                         guard let responseJson = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any] else {
                             NSLog("Error converting data to JSON (Guard)")
@@ -60,12 +61,14 @@ class InitialViewController:UIViewController{
                             return
                         }
                         self.masterViewController.OASKey = responseKey
-
-                        /*guard let responseSiteId = responseJson["siteId"] as? String else {
+                        guard let responseSiteId = responseJson["sites"] as? [String] else {
                             NSLog("Could not retrive the site Id")
                             return
                         }
-                        self.masterViewController.siteId = responseSiteId*/
+                        for id in responseSiteId {
+                            self.masterViewController.siteId.append(id)
+                        }
+                        
                         self.masterViewController.copyEmulationFile()
                         self.masterViewController.navigationButton.isEnabled = true
                         UIApplication.shared.sendAction(self.masterViewController.navigationButton.action!, to:self.masterViewController.navigationButton.target, from: self, for: nil)

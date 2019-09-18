@@ -21,7 +21,7 @@ class VisioGlobeController: UIViewController {
     
     func changeMap(mapHash:String){
         self.setMapHash(mapHash)
-        NSLog("VisioGlobe ChangeMap")
+        NSLog("VisioGlobe ChangeMap, hash: " + mapHash)
         if(mapView != nil){
             mapView.unloadMap()
             mapView.setMapHash(mapHash)

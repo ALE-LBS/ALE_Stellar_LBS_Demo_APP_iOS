@@ -8,7 +8,6 @@ target 'StellarLbsDemoApplication' do
   # Pods for StellarLbsDemoApplication
   pod 'OmniAccessStellarLBS'
   pod 'MapwizeForMapbox'
-  pod 'IndoorLocation'
 
   target 'StellarLbsDemoApplicationTests' do
     inherit! :search_paths

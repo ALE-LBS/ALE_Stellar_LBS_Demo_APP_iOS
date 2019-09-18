@@ -13,7 +13,7 @@ import MapwizeForMapbox
 class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewDelegate {
     
     var mapwizePlugin:MapwizePlugin!
-    var locationProvider:OASLocationProvider = OASLocationProvider.init()
+    var locationProvider:SimpleLocationProvider = SimpleLocationProvider.init()
     var isLocationProviderSet:Bool=false
     var mglMapView:MGLMapView?
     var selectedCoordinates:CLLocationCoordinate2D?
@@ -33,7 +33,8 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
         mglMapView!.setZoomLevel(17, animated: false)
         view.addSubview(mglMapView!)
         //MapWize
-        mapwizePlugin = MapwizePlugin(mglMapView, options:MWZOptions())
+        let mapOptions: MWZOptions = MWZOptions.init()
+        mapwizePlugin = MapwizePlugin.init(mglMapView, options: mapOptions)
         mapwizePlugin.delegate = self
         mapwizePlugin.mapboxDelegate = self
     }
@@ -46,7 +47,10 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
         case PLACE_CLICK:
             NSLog("Place Click")
             mapwizePlugin.removeMarkers()
-            mapwizePlugin.addMarker(coreLocationToMapwize(clickEvent.place.center()))
+            mapwizePlugin.addMarker(coreLocationToMapwize(clickEvent.place.center())) { (marker) in
+                NSLog("marker.debugDescription")
+            }
+            //mapwizePlugin.addMarker(coreLocationToMapwize(clickEvent.place.center()))
             let button = createButton(text: "Go", x: 10, y: Int(view.bounds.maxY-80), width: 50, height: 50)
             lastPlace = clickEvent.place
             button.addTarget(self, action: #selector(getDirection), for: .touchUpInside)

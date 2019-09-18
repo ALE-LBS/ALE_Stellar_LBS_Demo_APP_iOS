@@ -15,7 +15,7 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
     var locationManager:CLLocationManager = CLLocationManager.init()
     var OASKey: String!
     //var siteId: String!
-    var siteID: String = "151"
+    var siteId: [String] = [] //TODO Get site id from response
     var username: String!
     
     override func viewDidLoad() {
@@ -87,6 +87,8 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
         }
         locationHandle?.initLocation(key: OASKey)
         switch mapSelected{
+        case .Education:
+                visioGlobeController.changeMap(mapHash: "m5cc12aefcc1596ca7baeb77819136677fa04fa1b")
             case .ColombesVisio:
                 visioGlobeController.changeMap(mapHash: "mb5cdba08b03f74907aef5eb16a56fec41a35435c")
             case .ColombesMapWize:
@@ -105,6 +107,8 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
     
     @IBAction func displayMapSelection(_ sender: Any?){
         let message = UIAlertController(title: "Select Map", message: "Select your map", preferredStyle: .actionSheet)
+        message.addAction(UIAlertAction(title: "Education", style: .default, handler: { (action:UIAlertAction!) -> Void in
+            self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.Education)}))
         message.addAction(UIAlertAction(title:"Transportation", style: .default, handler: {(action:UIAlertAction!) -> Void in
             self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.Transportation)}))
         message.addAction(UIAlertAction(title:"Hospitality", style: .default, handler: {(action:UIAlertAction!) -> Void in
@@ -144,7 +148,8 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
         case .notDetermined:
             locationManager.requestAlwaysAuthorization()
         case .restricted:
-            self.errorQuitApp(title: "Error", message: "This app needs to acces to your location, please authorize in configuration")        default:
+            self.errorQuitApp(title: "Error", message: "This app needs to acces to your location, please authorize in configuration")
+        default:
             NSLog("oui")
         }
     }
@@ -192,6 +197,8 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
             catch (let error){
                 NSLog("Unable to copy file: " + error.localizedDescription)
             }
+        }else{
+            NSLog("Emulation file doesn't exists")
         }
     }
     
@@ -221,6 +228,8 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
             catch (let error){
                 NSLog("Unable to copy file: " + error.localizedDescription)
             }
+        }else{
+            NSLog("Emulation file doesn't exists")
         }
     }
 }

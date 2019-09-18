@@ -1,33 +1,24 @@
 PODS:
   - IndoorLocation (1.0.4)
-  - Mapbox-iOS-SDK (4.8.0)
-  - MapwizeForMapbox (2.1.6):
+  - Mapbox-iOS-SDK (4.10.0)
+  - MapwizeForMapbox (2.3.3):
     - IndoorLocation (= 1.0.4)
-    - Mapbox-iOS-SDK (= 4.8.0)
+    - Mapbox-iOS-SDK (= 4.10.0)
     - SSZipArchive (= 2.1.4)
-  - OmniAccessStellarLBS (4.5.1)
+  - OmniAccessStellarLBS (4.6.2)
   - SSZipArchive (2.1.4)
 
 DEPENDENCIES:
-  - IndoorLocation
   - MapwizeForMapbox
   - OmniAccessStellarLBS
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - IndoorLocation
-    - Mapbox-iOS-SDK
-    - MapwizeForMapbox
-    - OmniAccessStellarLBS
-    - SSZipArchive
-
 SPEC CHECKSUMS:
   IndoorLocation: 9812c8c2d499ef25e6146ef90cf23f8d107213a8
-  Mapbox-iOS-SDK: 864bc732a20c183d87f04923295e988b504453d9
-  MapwizeForMapbox: ee09dd7d011145b8831bec76581f8850ca3ddaee
-  OmniAccessStellarLBS: e4ec3f7266ea0c38d87ebecea090ee2ce188a4c1
+  Mapbox-iOS-SDK: 8b1b777de7de373cdf000994c91af101ef886477
+  MapwizeForMapbox: a6e87b455ec4bc8089eb8d6882cc5fb2895a2531
+  OmniAccessStellarLBS: a8a6411844008f0eb129896fd68c566db30684a6
   SSZipArchive: 41455d4b8d2b6ab93990820b50dc697c2554a322
 
-PODFILE CHECKSUM: e08bb6074f5bee0ce8918f5f383fea3c828a9ed0
+PODFILE CHECKSUM: 7936339a54e5f39cfce3bdf20ef5300550fc7cb0
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.4.0

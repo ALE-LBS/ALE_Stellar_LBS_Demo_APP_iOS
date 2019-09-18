@@ -113,7 +113,7 @@
  *
  * @return Whether enabled or not.
  *
- * @note This method should be called within or after VMEMapListener::mapDidLoad:
+ * @note This method should be called within or after VMELifeCycleListener::mapDidLoad:
  * because it can be enabled via the application parameters.
  *
  * @version 1.5
@@ -131,7 +131,7 @@
  *
  * @return Whether enabled or not.
  *
- * @note This method should be called within or after VMEMapListener::mapDidLoad:
+ * @note This method should be called within or after VMELifeCycleListener::mapDidLoad:
  * because it can be enabled via the application parameters.
  *
  * @version 1.5
@@ -148,7 +148,7 @@
  *
  * @return Whether enabled or not.
  *
- * @note This method should be called within or after VMEMapListener::mapDidLoad:
+ * @note This method should be called within or after VMELifeCycleListener::mapDidLoad:
  * because it can be enabled via the application parameters.
  *
  * @version 1.5
@@ -165,7 +165,7 @@
  *
  * @return Whether enabled or not.
  *
- * @note This method should be called within or after VMEMapListener::mapDidLoad:
+ * @note This method should be called within or after VMELifeCycleListener::mapDidLoad:
  * because it can be enabled via the application parameters.
  *
  * @version 1.5
