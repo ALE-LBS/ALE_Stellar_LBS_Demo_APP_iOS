@@ -31,6 +31,7 @@ class VisioGlobeController: UIViewController {
     
     override func viewDidLoad() {
         NSLog("VisioGlobe ViewDidLoad")
+        mapView.setPromptUserToDownloadMap(false)
         mapView.setMapHash(mapHash)
         mapView.loadMap()
         mapView.showSearchView(withTitle: "Search", callback: searchViewCallback)

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2C83FECA3FDF95C47D4CDED6 /* Pods_StellarLbsDemoApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D667347C5FA4841359AB4F /* Pods_StellarLbsDemoApplication.framework */; };
 		5B9C2F538E27838E36BF124D /* Pods_StellarLbsDemoApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E937EDCA580DE61EA112F2 /* Pods_StellarLbsDemoApplicationTests.framework */; };
-		841134FD2056C523007A23F3 /* alerts_emulator.json in Resources */ = {isa = PBXBuildFile; fileRef = 841134FC2056C523007A23F3 /* alerts_emulator.json */; };
 		84B2D16023322957001AD44E /* colombes.gwl in Resources */ = {isa = PBXBuildFile; fileRef = 84C1F2F423312C7D0057F469 /* colombes.gwl */; };
 		84B2D16123322C45001AD44E /* VisioMoveEssential.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8BCC5D22671EE700E995B6 /* VisioMoveEssential.framework */; };
 		84C5CE5C2046A969005DD7D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE5B2046A969005DD7D0 /* AppDelegate.swift */; };
@@ -20,7 +19,6 @@
 		84C5CE712046A969005DD7D0 /* StellarLbsDemoApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE702046A969005DD7D0 /* StellarLbsDemoApplicationTests.swift */; };
 		84C5CE7C2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C5CE7B2046A969005DD7D0 /* StellarLbsDemoApplicationUITests.swift */; };
 		84D2EDC2205172970039F15B /* SimpleLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2EDC1205172970039F15B /* SimpleLocationProvider.swift */; };
-		84D2EDC420517F5B0039F15B /* nao.kml in Resources */ = {isa = PBXBuildFile; fileRef = 84D2EDC320517F5B0039F15B /* nao.kml */; };
 		84DB0F28233102CD00C5CF32 /* IndoorLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DB0F27233102CD00C5CF32 /* IndoorLocation.framework */; };
 		BF69E1A62264A3030005BEF1 /* LocationHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A52264A3030005BEF1 /* LocationHandle.swift */; };
 		BF69E1A82265FCD90005BEF1 /* MapWizeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF69E1A72265FCD90005BEF1 /* MapWizeController.swift */; };
@@ -54,7 +52,6 @@
 /* Begin PBXFileReference section */
 		4427AEFD89799C005BD2EB29 /* Pods-StellarLbsDemoApplicationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StellarLbsDemoApplicationUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StellarLbsDemoApplicationUITests/Pods-StellarLbsDemoApplicationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		49FD368CE339C7D8724C33E3 /* Pods_StellarLbsDemoApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StellarLbsDemoApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		841134FC2056C523007A23F3 /* alerts_emulator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = alerts_emulator.json; sourceTree = "<group>"; };
 		846D05232330FC5E00E17D0A /* MapwizeForMapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapwizeForMapbox.framework; path = Pods/MapwizeForMapbox/MapwizeForMapbox.framework; sourceTree = "<group>"; };
 		846D05252330FCA100E17D0A /* IndoorLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IndoorLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C1F2F423312C7D0057F469 /* colombes.gwl */ = {isa = PBXFileReference; lastKnownFileType = file; path = colombes.gwl; sourceTree = SOURCE_ROOT; };
@@ -73,7 +70,6 @@
 		84C5CE7D2046A969005DD7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C5CE892046A977005DD7D0 /* StellarLbsDemoApplication-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StellarLbsDemoApplication-Bridging-Header.h"; sourceTree = "<group>"; };
 		84D2EDC1205172970039F15B /* SimpleLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLocationProvider.swift; sourceTree = "<group>"; };
-		84D2EDC320517F5B0039F15B /* nao.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = nao.kml; sourceTree = "<group>"; };
 		84DB0F27233102CD00C5CF32 /* IndoorLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IndoorLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F7C32F2330D97E00F6FB50 /* IndoorLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IndoorLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF586A78226752A20048E8B7 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -221,8 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				84C1F2F423312C7D0057F469 /* colombes.gwl */,
-				841134FC2056C523007A23F3 /* alerts_emulator.json */,
-				84D2EDC320517F5B0039F15B /* nao.kml */,
 				84C5CE5B2046A969005DD7D0 /* AppDelegate.swift */,
 				84C5CE5D2046A969005DD7D0 /* MasterViewController.swift */,
 				BF69E1A72265FCD90005BEF1 /* MapWizeController.swift */,
@@ -384,8 +378,6 @@
 				84C5CE662046A969005DD7D0 /* LaunchScreen.storyboard in Resources */,
 				84C5CE632046A969005DD7D0 /* Assets.xcassets in Resources */,
 				84C5CE612046A969005DD7D0 /* Main.storyboard in Resources */,
-				841134FD2056C523007A23F3 /* alerts_emulator.json in Resources */,
-				84D2EDC420517F5B0039F15B /* nao.kml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,7 +677,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
@@ -744,7 +736,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
@@ -759,6 +751,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF586A83226759180048E8B7 /* Project-Debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -800,6 +793,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e";
 			};
 			name = Debug;
 		};
@@ -807,6 +801,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF586A84226759180048E8B7 /* Project-Release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++98";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -847,6 +842,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "StellarLbsDemoApplication/StellarLbsDemoApplication-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e";
 			};
 			name = Release;
 		};

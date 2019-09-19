@@ -9,7 +9,7 @@
 import UIKit
 
 class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLocationManagerDelegate{
-    
+        
     @IBOutlet weak var navigationButton: UIBarButtonItem!
     var locationHandle:LocationHandle? = nil
     var locationManager:CLLocationManager = CLLocationManager.init()
