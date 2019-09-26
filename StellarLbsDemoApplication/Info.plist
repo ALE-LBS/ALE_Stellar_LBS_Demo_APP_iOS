@@ -31,6 +31,8 @@
 	<true/>
 	<key>MWZMapwizeApiKey</key>
 	<string>98087bcfa9f1a716913591a5f3c8212a</string>
+	<key>NSAllowsArbitraryLoads</key>
+	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -55,16 +57,31 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>This app needs to access to the bluetooth sensor</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Rainbow needs to access the camera</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Rainbow needs to access to your contacts</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>OmniAccess Stellar LBS SDK will have access to your location information when using the application</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>OmniAccess Stellar LBS SDK will have access to your location information when using the application</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>OmniAccess Stellar LBS SDK will have access to your location information when using the application</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Rainbow needs to access the microphone</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Rainbow needs to access to your photos</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>INStartAudioCallIntent</string>
+		<string>INStartVideoCallIntent</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>location</string>
 		<string>audio</string>
+		<string>location</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -90,22 +107,5 @@
 	<array>
 		<dict/>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>Rainbow needs to access the camera</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Rainbow needs to access the microphone</string>
-	<key>NSAllowsArbitraryLoads</key>
-	<true/>
-	<key>NSContactsUsageDescription</key>
-	<string>Rainbow needs to access to your contacts</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Rainbow needs to access to your photos</string>
-	<key>NSUserActivityTypes</key>
-	<array>
-		<string>INStartAudioCallIntent</string>
-		<string>INStartVideoCallIntent</string>
-	</array>
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>This app needs to access to the bluetooth sensor</string>
 </dict>
 </plist>
