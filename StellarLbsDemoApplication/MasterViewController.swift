@@ -33,7 +33,6 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
         // Dispose of any resources that can be recreated.
     }
     
-    
     // Adapted Multi View Controller Tutorial from https://cocoacasts.com/managing-view-controllers-with-container-view-controllers/
     lazy var mapWizeController: MapWizeController = {
         //Load Storyboard
@@ -49,10 +48,10 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
         return viewController
     }()
     
-    lazy var initialViewController: InitialViewController = {
+    lazy var loginViewController: LoginViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        var viewController = storyboard.instantiateViewController(withIdentifier: "InitialViewController") as! InitialViewController
-        viewController.masterViewController = self
+        var viewController = storyboard.instantiateViewController(withIdentifier: "InitialViewController") as! LoginViewController
+        viewController.setMasterViewController(viewController: self)
         self.add(asChildViewController:viewController)
         return viewController
     }()
@@ -87,7 +86,7 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
         }
         locationHandle?.initLocation(key: OASKey)
         switch mapSelected{
-        case .Education:
+            case .Education:
                 visioGlobeController.changeMap(mapHash: "m5cc12aefcc1596ca7baeb77819136677fa04fa1b")
             case .ColombesVisio:
                 visioGlobeController.changeMap(mapHash: "mb5cdba08b03f74907aef5eb16a56fec41a35435c")
@@ -107,30 +106,28 @@ class MasterViewController: UIViewController , UIGestureRecognizerDelegate, CLLo
     
     @IBAction func displayMapSelection(_ sender: Any?){
         let message = UIAlertController(title: "Select Map", message: "Select your map", preferredStyle: .actionSheet)
-        message.addAction(UIAlertAction(title: "Education", style: .default, handler: { (action:UIAlertAction!) -> Void in
-            self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.Education)}))
-        message.addAction(UIAlertAction(title:"Transportation", style: .default, handler: {(action:UIAlertAction!) -> Void in
-            self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.Transportation)}))
-        message.addAction(UIAlertAction(title:"Hospitality", style: .default, handler: {(action:UIAlertAction!) -> Void in
-            self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.Hospitality)}))
-        message.addAction(UIAlertAction(title:"Healthcare", style: .default, handler: {(action:UIAlertAction!) -> Void in
-            self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.Healthcare)}))
-        message.addAction(UIAlertAction(title:"EBC Colombes 3D", style: .default, handler: {(action:UIAlertAction!) -> Void in
-            self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.ColombesVisio)}))
-        message.addAction(UIAlertAction(title: "EBC Colombes 2D", style: .default, handler: {(action:UIAlertAction!) -> Void in
-            self.changeMap(asChildViewController: self.mapWizeController, mapSelected: Map.ColombesMapWize)}))
+        message.addAction(UIAlertAction(title: "Education", style: .default, handler: { (action:UIAlertAction!) -> Void in self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.Education)}))
+        message.addAction(UIAlertAction(title:"Transportation", style: .default, handler: {(action:UIAlertAction!) -> Void in self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.Transportation)}))
+        message.addAction(UIAlertAction(title:"Hospitality", style: .default, handler: {(action:UIAlertAction!) -> Void in self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.Hospitality)}))
+        message.addAction(UIAlertAction(title:"Healthcare", style: .default, handler: {(action:UIAlertAction!) -> Void in self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.Healthcare)}))
+        message.addAction(UIAlertAction(title:"EBC Colombes 3D", style: .default, handler: {(action:UIAlertAction!) -> Void in self.changeMap(asChildViewController: self.visioGlobeController, mapSelected: Map.ColombesVisio)}))
+        message.addAction(UIAlertAction(title: "EBC Colombes 2D", style: .default, handler: {(action:UIAlertAction!) -> Void in self.changeMap(asChildViewController: self.mapWizeController, mapSelected: Map.ColombesMapWize)}))
+        message.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        //iPad Compatibility (Display a menu in the center of the screen with the choices)
+        if let popoverController = message.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
         OperationQueue.main.addOperation {
             self.present(message,animated: true, completion: nil)
         }
     }
     
-    private func setupInitialView(){
-        removeAll()
-        add(asChildViewController: initialViewController)
-    }
-    
     private func setupView(){
-        setupInitialView()
+        removeAll()
+        add(asChildViewController: loginViewController)
     }
     
     //***********************************************************

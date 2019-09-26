@@ -18,6 +18,7 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
     var mglMapView:MGLMapView?
     var selectedCoordinates:CLLocationCoordinate2D?
     var lastPlace:MWZPlace? = nil
+    var lastUserPosition:CLLocationCoordinate2D? = nil
     
     func changeMap(coordinates:CLLocationCoordinate2D){
         selectedCoordinates=coordinates
@@ -50,7 +51,6 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
             mapwizePlugin.addMarker(coreLocationToMapwize(clickEvent.place.center())) { (marker) in
                 NSLog("marker.debugDescription")
             }
-            //mapwizePlugin.addMarker(coreLocationToMapwize(clickEvent.place.center()))
             let button = createButton(text: "Go", x: 10, y: Int(view.bounds.maxY-80), width: 50, height: 50)
             lastPlace = clickEvent.place
             button.addTarget(self, action: #selector(getDirection), for: .touchUpInside)
@@ -60,7 +60,6 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
         default:
             NSLog("")
         }
-        
     }
     
     @objc func getDirection(){
@@ -68,13 +67,17 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
             NSLog("API Success")
             MWZApi.signin("98087bcfa9f1a716913591a5f3c8212a", success: {
                 NSLog("Sign In Success")
+                MWZApi.getDirectionWith(from: self.coreLocationToMapwize(self.lastUserPosition!), to:self.lastPlace?.entrance,isAccessible: false, success: { (direction) in
+                    self.mapwizePlugin.setDirection(direction)
+                }, failure: { (error) in
+                    NSLog("Error getting direction" + error.debugDescription)
+                })
             }, failure: { (r) in
                 NSLog("Sign In Failure")
             })
         }) { (r) in
             NSLog("API Failure")
         }
-        
     }
     
     override func viewDidLoad() {
@@ -87,10 +90,9 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
         super.viewDidAppear(animated)
     }
     
-    
-    
     //Tell Indoor Location Provider to update the location on the map
     func setUserPosition(_ coordinates: CLLocationCoordinate2D, floor:Int){
+        lastUserPosition = coordinates
         if(!isLocationProviderSet){
             mapwizePlugin.setIndoorLocationProvider(locationProvider)
             isLocationProviderSet=true

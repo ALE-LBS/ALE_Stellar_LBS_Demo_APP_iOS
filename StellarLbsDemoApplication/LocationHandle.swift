@@ -6,6 +6,8 @@
 //  Copyright © 2019 ALE. All rights reserved.
 //
 
+import Rainbow
+
 class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, NAOGeofencingHandleDelegate, NAOSyncDelegate{
     
     var locationHandle : NAOLocationHandle?
@@ -69,8 +71,9 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
     func didFire(_ alert: NaoAlert!) {
         NSLog("didFire")
         if(alert.content.starts(with: "http")){
-            NSLog("Alert starts with http")
             UIApplication.shared.open(URL.init(string: alert.content)!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+        }else if(alert.content.starts(with: "<DND>")){
+            ServicesManager.sharedInstance()?.contactsManagerService.changeMyPresence(Presence.presenceDoNotDisturb())
         }
     }
     
@@ -102,10 +105,7 @@ class LocationHandle: NSObject, NAOSensorsDelegate, NAOLocationHandleDelegate, N
     }
     
     func didLocationChange(_ location: CLLocation!) {
-        /*NSLog("didLocationChange")
-        NSLog("latitude: " + location.coordinate.latitude.description)
-        NSLog("longitude: " + location.coordinate.longitude.description)
-        NSLog("altitude: " + location.altitude.description)*/
+        NSLog("didLocationChange")
         guard masterViewController != nil else{
             return
         }

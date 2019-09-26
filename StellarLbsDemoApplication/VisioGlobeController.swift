@@ -52,6 +52,4 @@ class VisioGlobeSearchViewCallback: NSObject, VMESearchViewCallback{
     func searchViewDidCancel(_ mapView: VMEMapView!) {
         NSLog("SearchViewDidCancel")
     }
-    
-    
 }
