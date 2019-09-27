@@ -42,5 +42,5 @@
 #import <VisioMoveEssential/VMEStyleInterface.h>
 #import <VisioMoveEssential/VMEViewMode.h>
 
-#define VME_VERSION_STRING @"1.17.2"
+#define VME_VERSION_STRING @"1.17.3"
 #define VME_MIN_DATA_SDK_VERSION_STRING @"2.1.3"

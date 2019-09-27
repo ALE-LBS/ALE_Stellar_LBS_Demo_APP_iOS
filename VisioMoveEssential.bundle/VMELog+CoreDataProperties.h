@@ -2,7 +2,7 @@
 //  VMELog+CoreDataProperties.h
 //  
 //
-//  Created by Jenkins on 30/08/2019.
+//  Created by Jenkins on 25/09/2019.
 //
 //  This file was automatically generated and should not be edited.
 //

@@ -17,7 +17,7 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
     var isLocationProviderSet:Bool=false
     var mglMapView:MGLMapView?
     var selectedCoordinates:CLLocationCoordinate2D?
-    var lastPlace:MWZPlace? = nil
+    var lastPlace:MWZPlace! = nil
     var lastUserPosition:CLLocationCoordinate2D? = nil
     
     func changeMap(coordinates:CLLocationCoordinate2D){
@@ -47,14 +47,14 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
             NSLog("Map Click")
         case PLACE_CLICK:
             NSLog("Place Click")
-            mapwizePlugin.removeMarkers()
+            /*mapwizePlugin.removeMarkers()
             mapwizePlugin.addMarker(coreLocationToMapwize(clickEvent.place.center())) { (marker) in
                 NSLog("marker.debugDescription")
             }
             let button = createButton(text: "Go", x: 10, y: Int(view.bounds.maxY-80), width: 50, height: 50)
             lastPlace = clickEvent.place
             button.addTarget(self, action: #selector(getDirection), for: .touchUpInside)
-            mglMapView?.addSubview(button)
+            mglMapView?.addSubview(button)*/
         case VENUE_CLICK:
             NSLog("Venue Click")
         default:
@@ -67,7 +67,9 @@ class MapWizeController: UIViewController, MWZMapwizePluginDelegate, MGLMapViewD
             NSLog("API Success")
             MWZApi.signin("98087bcfa9f1a716913591a5f3c8212a", success: {
                 NSLog("Sign In Success")
-                MWZApi.getDirectionWith(from: self.coreLocationToMapwize(self.lastUserPosition!), to:self.lastPlace?.entrance,isAccessible: false, success: { (direction) in
+                let from = self.coreLocationToMapwize(self.lastUserPosition!)
+                let to = self.lastPlace.entrance!
+                MWZApi.getDirectionWith(from: from, to:to,isAccessible: true, success: {(direction) in
                     self.mapwizePlugin.setDirection(direction)
                 }, failure: { (error) in
                     NSLog("Error getting direction" + error.debugDescription)
